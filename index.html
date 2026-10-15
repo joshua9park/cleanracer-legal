@@ -13,124 +13,7 @@
 <meta property="og:url" content="https://cleanracer.com/">
 <link rel="icon" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<style>
-/* The same tokens as the apps (packages/theme): white and grouped-gray surfaces, one deep blue, system fonts, iOS corner radii. */
-:root{color-scheme:light dark;
-  --bg:#FFFFFF;--grouped:#F2F2F7;--card:#FFFFFF;--text:#000000;--muted:#5C5C61;--faint:#8E8E93;--line:#C6C6C8;
-  --fill:#F2F2F7;--tint:#0A60D6;--on-tint:#FFFFFF;--tint-soft:rgba(10,96,214,.12);--ok:#14702E;--shadow:0 1px 2px rgba(0,0,0,.05)}
-@media(prefers-color-scheme:dark){:root{
-  --bg:#000000;--grouped:#000000;--card:#1C1C1E;--text:#FFFFFF;--muted:#A0A0A8;--faint:#6E6E73;--line:#38383A;
-  --fill:#1C1C1E;--tint:#4C9AFF;--on-tint:#000000;--tint-soft:rgba(76,154,255,.16);--ok:#34D058;--shadow:none}}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font:17px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-/* nav */
-nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:20px;letter-spacing:-.01em}
-.brand img{width:34px;height:34px;border-radius:8px;display:block}
-nav ul{display:flex;gap:26px;list-style:none;font-size:15px}
-nav ul a{text-decoration:none;color:var(--muted)}nav ul a:hover{color:var(--text)}
-/* hero */
-.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:48px 0 80px}
-.eyebrow{display:block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--tint);margin-bottom:14px}
-h1{font-size:clamp(38px,5.6vw,60px);line-height:1.06;letter-spacing:-.03em;font-weight:700}
-h1 em{font-style:normal;color:var(--tint)}
-.lede{margin-top:20px;font-size:20px;line-height:1.45;color:var(--muted);max-width:29em}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 22px;border-radius:12px;font-weight:600;font-size:17px;text-decoration:none}
-.btn.primary{background:var(--tint);color:var(--on-tint)}
-.btn.soon{background:var(--fill);color:var(--muted);cursor:default}
-.btn.soon b{color:var(--text)}
-.btn.plain{background:var(--tint-soft);color:var(--tint)}
-.note{margin-top:16px;font-size:14px;color:var(--faint)}
-/* phone mockup: the order screen as the customer app draws it (Order Status, Payment, then the progress timeline, cropped by the screen) */
-.phone-wrap{display:flex;justify-content:center}
-.phone{width:300px;border-radius:50px;padding:11px;background:#1C1C1E;box-shadow:0 40px 70px -28px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.08) inset,0 0 0 1px rgba(0,0,0,.4)}
-.screen{position:relative;border-radius:40px;background:#F2F2F7;color:#000;height:700px;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Helvetica,Arial,sans-serif}
-.screen .island{position:absolute;left:50%;top:10px;width:86px;height:25px;border-radius:14px;background:#000;transform:translateX(-50%)}
-.screen .status{display:flex;justify-content:space-between;align-items:center;padding:14px 26px 0;font-size:14px;font-weight:600;height:46px}
-.screen .status i{display:inline-block;width:17px;height:9px;border-radius:2.5px;background:#000;margin-left:5px;vertical-align:middle}
-.screen .status i.s{width:15px;height:10px;border-radius:2px;background:linear-gradient(90deg,#000 0 25%,transparent 25% 33%,#000 33% 58%,transparent 58% 66%,#000 66% 100%);clip-path:polygon(0 100%,100% 100%,100% 0,0 60%)}
-.screen .inner{padding:8px 14px 0}
-.top{display:flex;align-items:center;gap:10px;margin-bottom:16px}
-.close{width:34px;height:34px;border-radius:50%;background:#E4E4E9;display:flex;align-items:center;justify-content:center;flex:none}
-.close::before,.close::after{content:"";position:absolute;width:13px;height:2px;background:#3A3A3C;border-radius:1px;transform:rotate(45deg)}
-.close::after{transform:rotate(-45deg)}
-.close{position:relative}
-.ticket{position:relative;flex:1;text-align:center;font-weight:700;font-size:15px;padding:8px 0;background:#ECECF0;border:.5px solid #D4D4D9;border-radius:9px}
-.ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:11px;height:11px;border-radius:50%;background:#F2F2F7;border:.5px solid #D4D4D9;transform:translateY(-50%)}
-.ticket::before{left:-6px;clip-path:inset(0 0 0 50%)}.ticket::after{right:-6px;clip-path:inset(0 50% 0 0)}
-.lab{font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:#6C6C70;margin:0 4px 6px}
-.pcard{background:#fff;border-radius:16px;padding:13px 14px;margin-bottom:16px}
-.pill{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;border-radius:99px;padding:4px 10px;background:#E3ECFA;color:#0A60D6}
-.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
-.pill.due{background:#F4E8D3;color:#8A5A00}
-.pcard p{font-size:15px;line-height:1.35;margin-top:9px;letter-spacing:-.005em}
-.big{display:flex;justify-content:space-between;align-items:center;font-size:25px;font-weight:700;letter-spacing:-.02em}
-.sumrow{display:flex;justify-content:space-between;font-size:14px;margin-top:8px}
-.sumrow.t{font-weight:700;border-top:.5px solid #DADADF;padding-top:8px;margin-top:9px}
-.pay{margin-top:12px;background:#0A60D6;color:#fff;font-weight:700;font-size:16px;border-radius:20px;height:54px;display:flex;align-items:center;justify-content:center;gap:8px}
-.pay svg{width:20px;height:20px}
-.tl{list-style:none;margin-top:4px}
-.tl li{position:relative;padding:0 0 15px 34px;font-size:14.5px;color:#8E8E93}
-.tl li::before{content:"";position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:#D1D1D6}
-.tl li::after{content:"";position:absolute;left:10px;top:24px;bottom:-1px;width:2px;background:#D1D1D6}
-.tl li.done{color:#000}.tl li.done::before{background:#0A60D6;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E");background-size:15px;background-position:center;background-repeat:no-repeat}
-.tl li.done::after{background:#0A60D6}
-.tl li.now{color:#000;font-weight:600}.tl li.now::before{background:#0A60D6;box-shadow:0 0 0 5px rgba(10,96,214,.2)}
-.fade{position:absolute;left:0;right:0;bottom:0;height:70px;background:linear-gradient(180deg,rgba(242,242,247,0),#F2F2F7 88%)}
-/* sections alternate white and grouped gray, like the apps' lists */
-section{padding:80px 0}
-section.gray{background:var(--grouped)}
-section:not(.gray) .step3,section:not(.gray) .feat,section:not(.gray) .privacy,section:not(.gray) .plan{background:var(--fill);box-shadow:none}
-.sec-head{max-width:640px;margin-bottom:40px}
-.sec-head h2{font-size:clamp(28px,4vw,40px);line-height:1.12;letter-spacing:-.025em;font-weight:700}
-.sec-head p{margin-top:12px;color:var(--muted);font-size:19px;line-height:1.45}
-.tag{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--tint);margin-bottom:10px;display:block}
-.steps3,.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.steps3{counter-reset:s}
-.step3,.feat{background:var(--card);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
-.step3{counter-increment:s}
-.step3::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--tint);color:var(--on-tint);font-weight:700;font-size:16px;margin-bottom:16px}
-.step3 h3,.feat h3{font-size:19px;line-height:1.25;letter-spacing:-.01em;margin-bottom:6px}
-.step3 p,.feat p{color:var(--muted);font-size:16px;line-height:1.45}
-.ico{font-size:24px;line-height:1;margin-bottom:14px;width:46px;height:46px;border-radius:12px;background:var(--tint-soft);display:grid;place-items:center}
-.privacy{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;background:var(--card);border-radius:24px;padding:36px;margin-top:16px;box-shadow:var(--shadow)}
-.privacy h2{font-size:clamp(26px,3.4vw,34px);line-height:1.12;letter-spacing:-.025em;font-weight:700}
-.privacy ul{list-style:none}.privacy li{padding:11px 0 11px 32px;position:relative;border-bottom:.5px solid var(--line);color:var(--muted);font-size:16px}
-.privacy li:last-child{border:0}.privacy li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
-.privacy li b{color:var(--text)}
-.apps{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
-.app{display:flex;gap:16px;align-items:center;background:var(--card);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
-.app img{width:64px;height:64px;border-radius:15px;flex:none}
-.app h3{font-size:19px}.app p{color:var(--muted);font-size:15px;line-height:1.4}
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1000px}
-.plan{background:var(--card);border-radius:16px;padding:28px;box-shadow:var(--shadow);border:2px solid transparent}
-.plan.pro{border-color:var(--tint)}
-.plan h3{font-size:20px}.price{font-size:42px;font-weight:700;letter-spacing:-.03em;margin:6px 0 2px}.price small{font-size:16px;font-weight:500;color:var(--muted)}
-.plan ul{list-style:none;margin-top:14px}.plan li{padding:7px 0 7px 26px;position:relative;color:var(--muted);border-top:.5px solid var(--line)}
-.plan li:first-child{border-top:0}.plan li::before{content:"✓";position:absolute;left:0;color:var(--tint);font-weight:700}
-.fine{margin-top:20px;color:var(--faint);font-size:14px;max-width:46em;line-height:1.5}
-.final{text-align:center;padding:90px 0}
-.final h2{font-size:clamp(30px,4.6vw,46px);letter-spacing:-.03em;line-height:1.1;font-weight:700}
-.final p{color:var(--muted);margin:14px auto 0;max-width:30em;font-size:19px}
-.final .cta{justify-content:center}
-footer{border-top:.5px solid var(--line);padding:30px 0 46px;color:var(--faint);font-size:14px}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px}
-footer a{color:var(--muted);text-decoration:none;margin-left:20px}footer a:hover{color:var(--text)}
-footer a:first-child{margin-left:0}
-@media(max-width:860px){
-  .hero{grid-template-columns:1fr;padding-top:20px}
-  .phone-wrap{order:2}
-  nav ul{display:none}
-  .steps3,.grid,.apps,.plans,.privacy{grid-template-columns:1fr}
-  .privacy{padding:26px}
-  section{padding:60px 0}
-}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
-</style>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 <div class="wrap">
@@ -138,8 +21,7 @@ footer a:first-child{margin-left:0}
     <a class="brand" href="/"><img src="/assets/cleanracer-icon.png" alt="">Clean Racer</a>
     <ul>
       <li><a href="#customers">For customers</a></li>
-      <li><a href="#stores">For cleaners</a></li>
-      <li><a href="#plans">Plans</a></li>
+      <li><a href="/cleaners/">For cleaners</a></li>
     </ul>
   </nav>
 
@@ -150,7 +32,7 @@ footer a:first-child{margin-left:0}
       <p class="lede">Clean Racer connects you to the dry cleaner you already trust. Book a pickup in seconds, follow every step, and message your cleaner. No live tracking. No fuss.</p>
       <div class="cta">
         <span class="btn soon" role="note"><b>Coming soon</b> to the App Store</span>
-        <a class="btn plain" href="#stores">Run a cleaner? Apply →</a>
+        <a class="btn plain" href="/cleaners/">Run a cleaner? See CR Business →</a>
       </div>
       <p class="note">Two apps, one account: <b>Clean Racer</b> for customers, <b>CR Business</b> for cleaners.</p>
     </div>
@@ -159,28 +41,36 @@ footer a:first-child{margin-left:0}
         <div class="island"></div>
         <div class="status"><span>9:41</span><span><i class="s"></i><i></i></span></div>
         <div class="inner">
-          <div class="top"><span class="close"></span><span class="ticket">Order #26</span><span style="width:34px;flex:none"></span></div>
-          <div class="lab">Order status</div>
-          <div class="pcard"><span class="pill">Out for delivery</span><p>Your driver is on the way to deliver your items.</p></div>
-          <div class="lab">Payment</div>
-          <div class="pcard">
-            <div class="big"><span>$42.50</span><span class="pill due" style="font-size:12.5px;font-weight:600;letter-spacing:0">Due</span></div>
-            <div class="sumrow"><span>Amount due</span><span>$42.50</span></div>
-            <div class="sumrow"><span>Convenience fee</span><span>$1.25</span></div>
-            <div class="sumrow t"><span>Total</span><span>$43.75</span></div>
-            <div class="pay"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M2.5 10h19"/></svg>Pay $43.75</div>
+          <div class="hello">Good morning, Alex 👋</div>
+          <div class="req">
+            <img src="/assets/pilot-line.png" alt="">
+            <b>Clothes to clean?</b>
+            <span class="s">Schedule a pickup from Sunrise Cleaners.</span>
+            <span class="go"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2A60D2" stroke-width="3.2" stroke-linecap="round"><path d="M12 4v16M4 12h16"/></svg>Request Pickup</span>
           </div>
-          <div class="lab">Progress</div>
-          <ul class="tl">
-            <li class="done">Scheduled</li>
-            <li class="done">Picked up</li>
-            <li class="done">Being cleaned</li>
-            <li class="done">Ready</li>
-            <li class="now">Out for delivery</li>
-            <li>Delivered</li>
-          </ul>
+          <div class="live">
+            <div class="t">
+              <div class="ico"><svg viewBox="0 0 24 24" fill="#0A60D6"><path d="M2 6.5A1.5 1.5 0 0 1 3.5 5h9A1.5 1.5 0 0 1 14 6.5V8h3.1c.5 0 .96.23 1.26.62l2.4 3.1c.15.2.24.45.24.7V16a1 1 0 0 1-1 1h-.6a2.5 2.5 0 0 1-4.8 0H9.4a2.5 2.5 0 0 1-4.8 0H4a2 2 0 0 1-2-2V6.5Zm12 3v2.5h4.2l-1.9-2.5H14ZM7 15.3a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Zm10 0a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Z"/></svg></div>
+              <div style="flex:1;min-width:0"><small>Order #26 · Sunrise</small><h4>On the way back to you</h4></div>
+              <svg width="8" height="14" viewBox="0 0 8 14" fill="none" stroke="#B0B0B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l6 6-6 6"/></svg>
+            </div>
+            <div class="when">Today, 10 am to 1 pm</div>
+            <div class="next">Your driver is bringing your order home.</div>
+            <div class="bar"><i></i></div>
+          </div>
+          <div class="cleaner">
+            <div class="tile">S</div>
+            <div><small>My cleaner</small><strong>Sunrise Cleaners</strong></div>
+            <div class="call"><svg width="17" height="17" viewBox="0 0 24 24" fill="#0A60D6"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1L6.6 10.8Z"/></svg></div>
+          </div>
         </div>
-        <div class="fade"></div>
+        <div class="tabbar">
+          <div class="on"><svg viewBox="0 0 24 24" fill="#0A60D6"><path d="M12 3 2.5 11.2a.8.8 0 0 0 .5 1.4H5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-7.4h2a.8.8 0 0 0 .5-1.4L12 3Z"/></svg>Home</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="#1C1C1E" stroke-width="2" stroke-linejoin="round"><rect x="4.5" y="7.5" width="15" height="13" rx="3"/><path d="M9 7.5V6a3 3 0 0 1 6 0v1.5"/></svg>Orders</div>
+          <div><span class="cr">CR</span>Pickup</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="#1C1C1E" stroke-width="2" stroke-linejoin="round"><path d="M12 4.5c-4.7 0-8.5 3-8.5 6.8 0 2 1 3.7 2.7 5L5.5 20l3.4-1.7c1 .3 2 .4 3.1.4 4.7 0 8.5-3 8.5-6.8S16.700 4.500 12 4.500Z"/></svg>Messages</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="#1C1C1E" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="10" r="3"/><path d="M6.200 18.500c1.300-2.200 3.100-3.200 5.800-3.200s4.500 1 5.800 3.200"/></svg>Account</div>
+        </div>
       </div></div>
     </div>
   </header>
@@ -203,7 +93,7 @@ footer a:first-child{margin-left:0}
     <div class="feat"><div class="ico">🔔</div><h3>Updates at every step</h3><p>Confirmed, picked up, being cleaned, ready, on the way. A simple push when something changes.</p></div>
     <div class="feat"><div class="ico">💬</div><h3>Message your cleaner</h3><p>Questions about a stain or a button? Ask right inside your order.</p></div>
     <div class="feat"><div class="ico">📸</div><h3>Photo at handoff</h3><p>Your driver can snap a photo at pickup and drop-off, so you always know it arrived.</p></div>
-    <div class="feat"><div class="ico">💳</div><h3>Pay your way</h3><p>Pay your driver or the counter as you always have. Every payment is recorded, so there are no surprises.</p></div>
+    <div class="feat"><div class="ico">💳</div><h3>Pay your way</h3><p>Pay by card right in the app with Apple Pay or a card, or pay your driver or the counter as you always have. Every payment is recorded.</p></div>
   </div>
   <div class="privacy">
     <div>
@@ -217,40 +107,10 @@ footer a:first-child{margin-left:0}
   </div>
 </div></section>
 
-<section id="stores" class="gray"><div class="wrap">
-  <div class="sec-head"><span class="tag">For cleaners · CR Business</span><h2>Run pickups and deliveries without the chaos.</h2><p>Built for the owner, the manager and the driver, on one shared list.</p></div>
-  <div class="apps">
-    <div class="app"><img src="/assets/cleanracer-icon.png" alt="Clean Racer app icon" width="72" height="72"><div><h3>Clean Racer</h3><p>For your customers. They link to you and book pickups.</p></div></div>
-    <div class="app"><img src="/assets/cleanracer-business-icon.png" alt="CR Business app icon" width="72" height="72"><div><h3>CR Business</h3><p>For your team. Run pickups, intake and deliveries.</p></div></div>
-  </div>
-  <div class="grid">
-    <div class="feat"><div class="ico">👆</div><h3>Two taps per stop</h3><p>"On my way" tells the customer you're coming. "Done" completes the stop. That's the whole job.</p></div>
-    <div class="feat"><div class="ico">📋</div><h3>One shared list</h3><p>Everyone sees today's stops. Start one and it's yours. No dispatching needed.</p></div>
-    <div class="feat"><div class="ico">⚖️</div><h3>Intake and tally</h3><p>Count items and weigh them at the counter. Track every order through "In the Shop" until it's ready.</p></div>
-    <div class="feat"><div class="ico">💵</div><h3>Payments, recorded</h3><p>Set the amount due and record cash or card at delivery. A delivery with a balance can't be closed until the payment is answered.</p></div>
-    <div class="feat"><div class="ico">👥</div><h3>Owners, managers, drivers</h3><p>Everyone gets the access they need. Managers handle disputes, overrides and the unpaid list.</p></div>
-    <div class="feat"><div class="ico">📍</div><h3>Your service area</h3><p>Set your hours and a service radius. Customers inside it can book.</p></div>
-  </div>
-</div></section>
-
-<section id="plans"><div class="wrap">
-  <div class="sec-head"><span class="tag">Plans</span><h2>Simple pricing for cleaners.</h2><p>Every plan includes every feature and unlimited customers. They differ only in how many drivers you have and how many stops your drivers make each month.</p></div>
-  <div class="plans">
-    <div class="plan"><h3>Starter</h3><div class="price">$29.99<small> / month</small></div>
-      <ul><li>150 stops a month</li><li>1 driver</li><li>Unlimited customers</li><li>Every feature included</li></ul></div>
-    <div class="plan pro"><h3>Growth</h3><div class="price">$59.99<small> / month</small></div>
-      <ul><li>500 stops a month</li><li>Up to 3 drivers</li><li>Unlimited customers</li><li>Every feature included</li></ul></div>
-    <div class="plan"><h3>Fleet</h3><div class="price">$129.99<small> / month</small></div>
-      <ul><li>Unlimited stops</li><li>Up to 10 drivers</li><li>Unlimited customers</li><li>Every feature included</li></ul></div>
-  </div>
-  <p class="fine">A stop is each time your driver stops the van to make a pickup or a doorstep delivery. Starter's 150 stops cover about 75 full pickup-and-delivery cycles. If you drop off several orders at the same house on one trip, that still counts as one stop. We'll let you know as you get close to your limit. A store that goes well past it has 15 days to move to a bigger plan, and we never stop a driver mid-route.</p>
-  <p class="fine">You apply in the CR Business app. We check your business license and call the number on your Google listing, then you subscribe through the App Store to open your store. Cancel any time in your App Store settings.</p>
-</div></section>
-
 <section class="final"><div class="wrap">
   <h2>Clean clothes. Zero hassle.</h2>
-  <p>Clean Racer is on its way to the App Store. Cleaners can write to us now to get on the list.</p>
-  <div class="cta"><a class="btn primary" href="mailto:application@cleanracer.com?subject=I%27d%20like%20to%20join%20Clean%20Racer">Cleaners: get in touch</a></div>
+  <p>Clean Racer is on its way to the App Store. Run a dry cleaner? See how CR Business works for your team.</p>
+  <div class="cta"><a class="btn primary" href="/cleaners/">For cleaners</a></div>
 </div></section>
 
 <footer><div class="wrap">
