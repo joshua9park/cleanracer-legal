@@ -45,26 +45,42 @@ h1 em{font-style:normal;color:var(--tint)}
 .btn.soon b{color:var(--text)}
 .btn.plain{background:var(--tint-soft);color:var(--tint)}
 .note{margin-top:16px;font-size:14px;color:var(--faint)}
-/* phone mockup: the order screen as the app draws it */
+/* phone mockup: the order screen as the customer app draws it (Order Status, Payment, then the progress timeline, cropped by the screen) */
 .phone-wrap{display:flex;justify-content:center}
-.phone{width:290px;border-radius:46px;padding:10px;background:#1C1C1E;box-shadow:0 30px 60px -24px rgba(0,0,0,.45),0 0 0 1px rgba(0,0,0,.2)}
-.screen{border-radius:37px;background:#F2F2F7;color:#000;padding:24px 14px 18px;min-height:530px;overflow:hidden}
-.screen .notch{width:84px;height:24px;border-radius:14px;background:#000;margin:-12px auto 14px}
-.screen h3{font-size:28px;line-height:1.1;letter-spacing:-.02em;margin:0 4px 2px}
-.screen .sub{font-size:13px;color:#5C5C61;margin:0 4px 12px}
-.card{background:#fff;border-radius:14px;padding:14px;margin-bottom:10px}
-.card .row{display:flex;justify-content:space-between;align-items:center;font-size:15px}
-.pill{font-size:12px;font-weight:600;border-radius:99px;padding:3px 10px;background:rgba(10,96,214,.12);color:#0A60D6}
-.steps{list-style:none;margin-top:12px}
-.steps li{position:relative;padding:0 0 13px 28px;font-size:14px;color:#8E8E93}
-.steps li::before{content:"";position:absolute;left:0;top:3px;width:14px;height:14px;border-radius:50%;background:#C6C6C8}
-.steps li::after{content:"";position:absolute;left:6px;top:19px;bottom:-3px;width:2px;background:#C6C6C8}
-.steps li:last-child::after{display:none}
-.steps li.done{color:#000}.steps li.done::before,.steps li.done::after{background:#14702E}
-.steps li.now{color:#000;font-weight:600}.steps li.now::before{background:#0A60D6;box-shadow:0 0 0 4px rgba(10,96,214,.2)}
-.steps small{display:block;font-weight:400;color:#8E8E93;font-size:12px}
-.msg .b{background:#F2F2F7;border-radius:14px;padding:8px 11px;font-size:13px}
-.fab{margin:14px auto 0;width:max-content;background:#0A60D6;color:#fff;font-weight:600;font-size:15px;border-radius:99px;padding:11px 22px}
+.phone{width:300px;border-radius:50px;padding:11px;background:#1C1C1E;box-shadow:0 40px 70px -28px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.08) inset,0 0 0 1px rgba(0,0,0,.4)}
+.screen{position:relative;border-radius:40px;background:#F2F2F7;color:#000;height:700px;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Helvetica,Arial,sans-serif}
+.screen .island{position:absolute;left:50%;top:10px;width:86px;height:25px;border-radius:14px;background:#000;transform:translateX(-50%)}
+.screen .status{display:flex;justify-content:space-between;align-items:center;padding:14px 26px 0;font-size:14px;font-weight:600;height:46px}
+.screen .status i{display:inline-block;width:17px;height:9px;border-radius:2.5px;background:#000;margin-left:5px;vertical-align:middle}
+.screen .status i.s{width:15px;height:10px;border-radius:2px;background:linear-gradient(90deg,#000 0 25%,transparent 25% 33%,#000 33% 58%,transparent 58% 66%,#000 66% 100%);clip-path:polygon(0 100%,100% 100%,100% 0,0 60%)}
+.screen .inner{padding:8px 14px 0}
+.top{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.close{width:34px;height:34px;border-radius:50%;background:#E4E4E9;display:flex;align-items:center;justify-content:center;flex:none}
+.close::before,.close::after{content:"";position:absolute;width:13px;height:2px;background:#3A3A3C;border-radius:1px;transform:rotate(45deg)}
+.close::after{transform:rotate(-45deg)}
+.close{position:relative}
+.ticket{position:relative;flex:1;text-align:center;font-weight:700;font-size:15px;padding:8px 0;background:#ECECF0;border:.5px solid #D4D4D9;border-radius:9px}
+.ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:11px;height:11px;border-radius:50%;background:#F2F2F7;border:.5px solid #D4D4D9;transform:translateY(-50%)}
+.ticket::before{left:-6px;clip-path:inset(0 0 0 50%)}.ticket::after{right:-6px;clip-path:inset(0 50% 0 0)}
+.lab{font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:#6C6C70;margin:0 4px 6px}
+.pcard{background:#fff;border-radius:16px;padding:13px 14px;margin-bottom:16px}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;border-radius:99px;padding:4px 10px;background:#E3ECFA;color:#0A60D6}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.pill.due{background:#F4E8D3;color:#8A5A00}
+.pcard p{font-size:15px;line-height:1.35;margin-top:9px;letter-spacing:-.005em}
+.big{display:flex;justify-content:space-between;align-items:center;font-size:25px;font-weight:700;letter-spacing:-.02em}
+.sumrow{display:flex;justify-content:space-between;font-size:14px;margin-top:8px}
+.sumrow.t{font-weight:700;border-top:.5px solid #DADADF;padding-top:8px;margin-top:9px}
+.pay{margin-top:12px;background:#0A60D6;color:#fff;font-weight:700;font-size:16px;border-radius:20px;height:54px;display:flex;align-items:center;justify-content:center;gap:8px}
+.pay svg{width:20px;height:20px}
+.tl{list-style:none;margin-top:4px}
+.tl li{position:relative;padding:0 0 15px 34px;font-size:14.5px;color:#8E8E93}
+.tl li::before{content:"";position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:#D1D1D6}
+.tl li::after{content:"";position:absolute;left:10px;top:24px;bottom:-1px;width:2px;background:#D1D1D6}
+.tl li.done{color:#000}.tl li.done::before{background:#0A60D6;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E");background-size:15px;background-position:center;background-repeat:no-repeat}
+.tl li.done::after{background:#0A60D6}
+.tl li.now{color:#000;font-weight:600}.tl li.now::before{background:#0A60D6;box-shadow:0 0 0 5px rgba(10,96,214,.2)}
+.fade{position:absolute;left:0;right:0;bottom:0;height:70px;background:linear-gradient(180deg,rgba(242,242,247,0),#F2F2F7 88%)}
 /* sections alternate white and grouped gray, like the apps' lists */
 section{padding:80px 0}
 section.gray{background:var(--grouped)}
@@ -140,21 +156,31 @@ footer a:first-child{margin-left:0}
     </div>
     <div class="phone-wrap" aria-hidden="true">
       <div class="phone"><div class="screen">
-        <div class="notch"></div>
-        <h3>Your Order</h3><p class="sub">Sunrise Cleaners · Pickup Thursday, 11 am to 2 pm</p>
-        <div class="card">
-          <div class="row"><strong>Order #8</strong><span class="pill">Being cleaned</span></div>
-          <ul class="steps">
-            <li class="done">Pickup confirmed<small>Tue 4:12 pm</small></li>
-            <li class="done">Picked up<small>Thu 11:40 am · photo added</small></li>
-            <li class="done">Received at the shop<small>Thu 1:05 pm</small></li>
-            <li class="now">Being cleaned<small>We'll let you know when it's ready</small></li>
-            <li>Out for delivery</li>
+        <div class="island"></div>
+        <div class="status"><span>9:41</span><span><i class="s"></i><i></i></span></div>
+        <div class="inner">
+          <div class="top"><span class="close"></span><span class="ticket">Order #26</span><span style="width:34px;flex:none"></span></div>
+          <div class="lab">Order status</div>
+          <div class="pcard"><span class="pill">Out for delivery</span><p>Your driver is on the way to deliver your items.</p></div>
+          <div class="lab">Payment</div>
+          <div class="pcard">
+            <div class="big"><span>$42.50</span><span class="pill due" style="font-size:12.5px;font-weight:600;letter-spacing:0">Due</span></div>
+            <div class="sumrow"><span>Amount due</span><span>$42.50</span></div>
+            <div class="sumrow"><span>Convenience fee</span><span>$1.25</span></div>
+            <div class="sumrow t"><span>Total</span><span>$43.75</span></div>
+            <div class="pay"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M2.5 10h19"/></svg>Pay $43.75</div>
+          </div>
+          <div class="lab">Progress</div>
+          <ul class="tl">
+            <li class="done">Scheduled</li>
+            <li class="done">Picked up</li>
+            <li class="done">Being cleaned</li>
+            <li class="done">Ready</li>
+            <li class="now">Out for delivery</li>
             <li>Delivered</li>
           </ul>
         </div>
-        <div class="card"><div class="msg"><div class="b">Your shirts will be ready tomorrow morning. 👍</div></div></div>
-        <div class="fab">Request Pickup</div>
+        <div class="fade"></div>
       </div></div>
     </div>
   </header>
