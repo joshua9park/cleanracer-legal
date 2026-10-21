@@ -130,3 +130,19 @@ footer a:first-child{margin-left:0}
 .icard em{font-style:normal;display:block;font-size:12.5px;font-weight:600;line-height:1.25;margin-top:1px}
 .icard .b2 em{color:#0A60D6}
 .icard .arrow{display:flex;align-items:center;color:#B0B0B6}
+
+/* real app screenshots in the phone frame (the frame is drawn here; the screen is a picture of the app) */
+.phone.real .screen{height:auto;background:#F2F2F7}
+.phone.real .screen img{display:block;width:100%;height:auto}
+.phone.real .screen .island{z-index:2}
+.phones3{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 28px;justify-items:center;align-items:start}
+.phones3 figure{display:flex;flex-direction:column;align-items:center;gap:18px;max-width:300px}
+.phones3 figcaption{text-align:center;max-width:260px}
+.phones3 figcaption b{display:block;font-size:19px;letter-spacing:-.01em;line-height:1.25}
+.phones3 figcaption span{display:block;margin-top:4px;color:var(--muted);font-size:16px;line-height:1.4}
+.phones3 .phone{width:260px;border-radius:44px;padding:10px}
+.phones3 .screen{border-radius:35px}
+@media(max-width:860px){
+  .phones3{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:24px;padding:4px 20px 18px;margin:0 -20px;justify-items:unset}
+  .phones3 figure{flex:0 0 auto;scroll-snap-align:center}
+}
