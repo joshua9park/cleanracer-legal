@@ -147,7 +147,7 @@ footer a:first-child{margin-left:0}
   .phones3 figure{flex:0 0 auto;scroll-snap-align:center}
 }
 
-/* ---- brand refresh: the apps' look (Kanit italic headlines, flag yellow, checkered stripe) ---- */
+/* ---- brand refresh: the apps' look (Kanit italic headlines, flag yellow) ---- */
 @font-face{font-family:"Kanit";font-style:italic;font-weight:700;font-display:swap;src:url(/assets/fonts/kanit-italic-700.woff2) format("woff2")}
 @font-face{font-family:"Kanit";font-style:italic;font-weight:800;font-display:swap;src:url(/assets/fonts/kanit-italic-800.woff2) format("woff2")}
 :root{--flag:#FFD21F;--navy:#0B1F4D}
@@ -167,7 +167,6 @@ h1{line-height:1.04}
 .band .btn.plain{background:rgba(255,255,255,.14);color:#fff}
 .band .btn.soon{background:rgba(255,255,255,.12);color:rgba(255,255,255,.82)}.band .btn.soon b{color:#fff}
 .band .note{color:rgba(255,255,255,.66)}.band .note b{color:#fff}
-.stripe{height:36px;border-top:4px solid var(--flag);background:conic-gradient(var(--navy) 25%,#fff 0 50%,var(--navy) 0 75%,#fff 0) 0 0/36px 36px}
 .phone-wrap{position:relative}
 .phone{position:relative;z-index:1}
 .ico{color:var(--tint)}
@@ -195,3 +194,7 @@ section.final .btn.primary{background:var(--flag);color:var(--navy)}
 .band .note{max-width:24em}
 
 .brand{font-family:"Kanit",-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;font-style:italic;font-weight:800;letter-spacing:0;font-size:22px}
+
+/* the customers page (Clean Racer) is lighter blue, so the two pages and apps are easy to tell apart; the cleaners page (CR Business) stays deep navy */
+.band.cust,section.final.cust{background:linear-gradient(160deg,#4A93F5 0%,#2F7BEA 45%,#0A56D0 100%)}
+.band.cust .eyebrow{color:#fff}
