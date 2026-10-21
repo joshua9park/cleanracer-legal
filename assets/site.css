@@ -147,7 +147,7 @@ footer a:first-child{margin-left:0}
   .phones3 figure{flex:0 0 auto;scroll-snap-align:center}
 }
 
-/* ---- brand refresh: the apps' look (Kanit italic headlines, flag yellow, checkered stripe, the mascot) ---- */
+/* ---- brand refresh: the apps' look (Kanit italic headlines, flag yellow, checkered stripe) ---- */
 @font-face{font-family:"Kanit";font-style:italic;font-weight:700;font-display:swap;src:url(/assets/fonts/kanit-italic-700.woff2) format("woff2")}
 @font-face{font-family:"Kanit";font-style:italic;font-weight:800;font-display:swap;src:url(/assets/fonts/kanit-italic-800.woff2) format("woff2")}
 :root{--flag:#FFD21F;--navy:#0B1F4D}
