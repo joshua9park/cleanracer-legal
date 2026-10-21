@@ -146,3 +146,52 @@ footer a:first-child{margin-left:0}
   .phones3{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:24px;padding:4px 20px 18px;margin:0 -20px;justify-items:unset}
   .phones3 figure{flex:0 0 auto;scroll-snap-align:center}
 }
+
+/* ---- brand refresh: the apps' look (Kanit italic headlines, flag yellow, checkered stripe, the mascot) ---- */
+@font-face{font-family:"Kanit";font-style:italic;font-weight:700;font-display:swap;src:url(/assets/fonts/kanit-italic-700.woff2) format("woff2")}
+@font-face{font-family:"Kanit";font-style:italic;font-weight:800;font-display:swap;src:url(/assets/fonts/kanit-italic-800.woff2) format("woff2")}
+:root{--flag:#FFD21F;--navy:#0B1F4D}
+h1,.sec-head h2,.final h2,.privacy h2{font-family:"Kanit",-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;font-style:italic;font-weight:800;letter-spacing:-.01em}
+h1{line-height:1.04}
+.band{position:relative;overflow:hidden;color:#fff;background:linear-gradient(160deg,#16419C 0%,#0B1F4D 62%,#071433 100%)}
+.band::before,.band::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.05);pointer-events:none}
+.band::before{width:720px;height:720px;right:-220px;top:-300px}
+.band::after{width:520px;height:520px;left:-200px;bottom:-260px}
+.band .wrap{position:relative;z-index:1}
+.band .brand{color:#fff}
+.band nav ul a{color:rgba(255,255,255,.8)}.band nav ul a:hover{color:#fff}
+.band h1{color:#fff}.band h1 em{color:var(--flag)}
+.band .eyebrow{color:var(--flag)}
+.band .lede{color:rgba(255,255,255,.84)}
+.band .btn.primary{background:var(--flag);color:var(--navy)}
+.band .btn.plain{background:rgba(255,255,255,.14);color:#fff}
+.band .btn.soon{background:rgba(255,255,255,.12);color:rgba(255,255,255,.82)}.band .btn.soon b{color:#fff}
+.band .note{color:rgba(255,255,255,.66)}.band .note b{color:#fff}
+.stripe{height:36px;border-top:4px solid var(--flag);background:conic-gradient(var(--navy) 25%,#fff 0 50%,var(--navy) 0 75%,#fff 0) 0 0/36px 36px}
+.phone-wrap{position:relative}
+.mascot{position:absolute;left:-196px;bottom:-30px;height:370px;width:auto;z-index:2;pointer-events:none;filter:drop-shadow(0 10px 24px rgba(0,0,0,.35))}
+.phone{position:relative;z-index:1}
+.ico{color:var(--tint)}
+.ico svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+section.final{background:linear-gradient(160deg,#16419C 0%,#0B1F4D 70%);color:#fff;position:relative}
+section.final p{color:rgba(255,255,255,.84)}
+section.final .btn.primary{background:var(--flag);color:var(--navy)}
+.plan.pro{border-color:var(--flag);box-shadow:0 0 0 3px rgba(255,210,31,.25)}
+.plan h3{font-family:"Kanit",sans-serif;font-style:italic;font-weight:800;font-size:22px;letter-spacing:0}
+.price{font-family:"Kanit",sans-serif;font-style:italic;font-weight:800;letter-spacing:-.01em}
+.faq{margin-top:36px;max-width:46em}
+.faq details{border-top:.5px solid var(--line);padding:2px 0}
+.faq details:last-child{border-bottom:.5px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:14px 0;font-weight:600;font-size:17px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--tint);font-size:24px;line-height:1;font-weight:500}
+.faq details[open] summary::after{content:"\2212"}
+.faq p{color:var(--muted);font-size:16px;line-height:1.5;padding:0 0 16px;max-width:42em}
+@media(max-width:860px){.mascot{display:none}.band::before{width:420px;height:420px;right:-160px;top:-170px}}
+
+.band .lede{max-width:22em}
+
+.mascot.thumbs{left:-96px;height:380px}
+.btn.soon{max-width:300px;height:auto;padding:10px 22px;text-align:center;flex-wrap:wrap;gap:0 6px;line-height:1.3}
+
+.band .note{max-width:24em}
