@@ -193,3 +193,5 @@ section.final .btn.primary{background:var(--flag);color:var(--navy)}
 .btn.soon{max-width:300px;height:auto;padding:10px 22px;text-align:center;flex-wrap:wrap;gap:0 6px;line-height:1.3}
 
 .band .note{max-width:24em}
+
+.brand{font-family:"Kanit",-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;font-style:italic;font-weight:800;letter-spacing:0;font-size:22px}
