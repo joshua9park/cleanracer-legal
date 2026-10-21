@@ -198,3 +198,6 @@ section.final .btn.primary{background:var(--flag);color:var(--navy)}
 /* the customers page (Clean Racer) is lighter blue, so the two pages and apps are easy to tell apart; the cleaners page (CR Business) stays deep navy */
 .band.cust,section.final.cust{background:linear-gradient(160deg,#4A93F5 0%,#2F7BEA 45%,#0A56D0 100%)}
 .band.cust .eyebrow{color:#fff}
+
+/* dark mode on the customers page: deep blue instead of black, in step with the lighter blue banner */
+@media(prefers-color-scheme:dark){body.cust-page{--bg:#0D2552;--grouped:#0A1D42;--card:#173670;--fill:#173670;--line:#2C4C88;--muted:#B4C3E0;--faint:#8FA3CC;--tint:#7DB4FF;--tint-soft:rgba(125,180,255,.16)}}
