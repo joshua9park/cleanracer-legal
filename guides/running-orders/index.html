@@ -44,6 +44,10 @@ p,li{margin:0 0 12px;color:var(--muted)}
 ul,ol{padding-left:22px;margin:0 0 4px}ul ul{margin-top:6px}
 b,strong{color:var(--text)}
 table{width:100%;border-collapse:collapse;font-size:16px;margin:4px 0 14px}th,td{text-align:left;padding:8px 6px;border-bottom:.5px solid var(--line);color:var(--muted)}th{color:var(--faint);font-weight:600;font-size:14px}td:first-child{color:var(--text)}
+.tip{background:#FFF4CC;border:1px solid #F0DB86;border-radius:12px;padding:14px 16px 2px;margin:6px 0 14px}.tip p{color:#5B4300}.tip strong{color:#3F2E00}
+li .where{margin:0;padding:0 8px;line-height:1.4;font-size:14px}
+.also{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin:26px 4px 10px}
+.ref{border-left:4px solid var(--tint);border-radius:6px 16px 16px 6px}
 .sub{background:var(--grouped);border-radius:12px;padding:14px 16px 4px;margin:6px 0 14px}
 .cl{list-style:none;padding-left:0}.cl li:before{content:"\2610\00a0\00a0";color:var(--tint)}
 footer{max-width:760px;margin:0 auto;padding:0 20px 50px;color:var(--faint);font-size:14px;line-height:1.5}
@@ -62,11 +66,11 @@ footer a{text-decoration:none}
 <div class="box">
 <strong>The five tabs.</strong>
 <ul>
-<li><strong>Home:</strong> what needs you now. New Requests and Needs Attention (Owners and Managers), plus an Overview of the day.</li>
-<li><strong>Today:</strong> the work. Pickups, In the Shop and Deliveries, in one shared list.</li>
+<li><strong>Home:</strong> what requires your attention now.</li>
+<li><strong>Today:</strong> the actual work. Pickups, In the Shop, and Deliveries.</li>
 <li><strong>Upcoming:</strong> confirmed pickups for the days ahead, read-only.</li>
 <li><strong>Messages:</strong> conversations with customers, with quick replies.</li>
-<li><strong>Orders:</strong> every order, newest first. Tap one to open it.</li>
+<li><strong>Orders:</strong> every order, newest first. Tap one to open a detailed view.</li>
 </ul>
 <strong>Roles.</strong> Everyone can run orders. Owners and Managers also handle disputes, voids, overrides and the unpaid list.
 </div>
@@ -74,15 +78,15 @@ footer a{text-decoration:none}
 <table>
 <tr><th>Step</th><th>What happens</th><th>Where</th></tr>
 <tr><td>1. Request</td><td>Customer asks for a pickup. You confirm or decline.</td><td>Home</td></tr>
-<tr><td>2. Pickup</td><td>Driver picks up the garments.</td><td>Today &rarr; Pickups</td></tr>
-<tr><td>3. Intake</td><td>Count the items, set the amount due.</td><td>Today &rarr; In the Shop</td></tr>
-<tr><td>4. Cleaning</td><td>Start cleaning, then mark ready.</td><td>Today &rarr; In the Shop</td></tr>
-<tr><td>5. Delivery</td><td>Driver delivers and records payment.</td><td>Today &rarr; Deliveries</td></tr>
+<tr><td>2. Pickup</td><td>Driver picks up the garments.</td><td>Today</td></tr>
+<tr><td>3. Intake</td><td>Count the items, set the amount due.</td><td>Today</td></tr>
+<tr><td>4. Cleaning</td><td>Start cleaning, then mark ready.</td><td>Today</td></tr>
+<tr><td>5. Delivery</td><td>Driver delivers and records payment.</td><td>Today</td></tr>
 </table>
 
 <section class="step">
 <h2><span class="n">1</span>Confirm or decline a request</h2>
-<span class="where">Home &rarr; New Requests (Owners and Managers)</span>
+<span class="where">Home &rarr; New Requests</span>
 <ul>
 <li>Open the request to see the customer, address and the time they chose.</li>
 <li>Tap <strong>Confirm request</strong>. The customer is told, and the pickup lands on Today for that day.</li>
@@ -96,21 +100,21 @@ footer a{text-decoration:none}
 <ul>
 <li>Everyone sees the same list of today&rsquo;s stops. There&rsquo;s no dispatching: <strong>starting a stop claims it</strong>.</li>
 <li>Tap <strong>On my way</strong>. The customer gets a simple &ldquo;Your driver is on the way&rdquo; message. There is no location tracking and no arrival times.</li>
-<li>At the door, tap <strong>Picked up</strong>. Adding a photo is optional.</li>
+<li>At the door, tap <strong>Picked up</strong>. Adding a photo is optional but recommended.</li>
 <li>Several stops at once? Press and hold one to select more, then tap <strong>On my way</strong> for all of them.</li>
-<li>Couldn&rsquo;t complete it? Tap <strong>Mark as not completed</strong> and say what happened. The customer is told, and it goes to Needs Attention on Home.</li>
 </ul>
+<div class="tip"><p>Couldn&rsquo;t complete it? Tap <strong>Mark as not completed</strong> and say what happened. The customer is told, and it goes to Needs Attention on Home.</p></div>
 </section>
 
 <section class="step">
 <h2><span class="n">3</span>Count the items at intake</h2>
-<span class="where">Today &rarr; In the Shop &rarr; Count items</span>
+<span class="where">Today &rarr; In the Shop</span>
 <ul>
-<li>Every item type is a row. Tap <strong>+</strong> and <strong>&minus;</strong>, or tap the number and type it. Use <strong>Something else</strong> for anything not on your list.</li>
+<li>Tap <strong>Count items</strong>. Every item type is a row. Tap <strong>+</strong> and <strong>&minus;</strong>, or tap the number and type it. Use <strong>Something else</strong> for anything not on your list.</li>
 <li>Enter the <strong>amount due</strong>. It&rsquo;s needed before cleaning can start, and it&rsquo;s the figure your customer sees and pays.</li>
 <li>Add your own <strong>store ticket number</strong> (a tag or POS number) if you want to match the order with your own system. It shows on the shop, delivery and order cards.</li>
-<li>Made a mistake? Tap <strong>Fix the count / amount due</strong> once the order has been counted.</li>
 </ul>
+<div class="tip"><p>Made a mistake? Tap <strong>Fix the count / amount due</strong> once the order has been counted.</p></div>
 </section>
 
 <section class="step">
@@ -119,8 +123,8 @@ footer a{text-decoration:none}
 <ul>
 <li>Tap <strong>Start cleaning</strong> when the order goes on your rack or line, then <strong>Mark ready for delivery</strong> when it&rsquo;s done.</li>
 <li>The customer sees each step in their app: Being cleaned, then Ready for delivery.</li>
-<li>Something to sort out with the customer? Open the order from Orders and tap <strong>Put on hold</strong>, then choose or write the reason. The customer is told, and the order waits on Home under Needs Attention until you continue it.</li>
 </ul>
+<div class="tip"><p>Something to sort out with the customer? Open the order from Orders and tap <strong>Put on hold</strong>, then choose or write the reason. The customer is told, and the order waits on Home under Needs Attention until you continue it.</p></div>
 </section>
 
 <section class="step">
@@ -133,12 +137,13 @@ footer a{text-decoration:none}
 <li><strong>Yes:</strong> confirm the amount (it&rsquo;s filled in, and you can edit it) and the method: Cash, Card, Payment app, Check or Other.</li>
 <li><strong>No:</strong> say why. The order shows up on the unpaid list.</li>
 </ul></li>
-<li>Delivery didn&rsquo;t happen? Tap <strong>Mark as not completed</strong> and the order returns to Ready.</li>
 </ul>
+<div class="tip"><p>Delivery didn&rsquo;t happen? Tap <strong>Mark as not completed</strong> and the order returns to Ready.</p></div>
 </section>
 
-<section class="step">
-<h2><span class="n">6</span>Getting paid</h2>
+<p class="also">Also good to know</p>
+<section class="step ref">
+<h2>Getting paid</h2>
 <ul>
 <li><strong>Paid in the app:</strong> if you&rsquo;ve connected Stripe, customers can pay by card, Apple Pay or Google Pay. It is recorded for you automatically.</li>
 <li><strong>Paid at the door or the counter:</strong> record it from the order: <strong>Orders &rarr; open the order &rarr; Record a payment</strong>. Partial payments are fine.</li>
@@ -147,8 +152,8 @@ footer a{text-decoration:none}
 </ul>
 </section>
 
-<section class="step">
-<h2><span class="n">7</span>When something goes wrong</h2>
+<section class="step ref">
+<h2>When something goes wrong</h2>
 <ul>
 <li><strong>Customer messages</strong> arrive in Messages. Tap a quick reply to fill the box, edit if you like, and send.</li>
 <li><strong>Cancel an order</strong> that hasn&rsquo;t been picked up yet (or one on hold): open it from Orders and tap <strong>Cancel order</strong>. The customer is told and the time slot is released.</li>
@@ -157,16 +162,15 @@ footer a{text-decoration:none}
 </section>
 
 <section class="step">
-<h2>A good day, in short</h2>
+<h2>In a typical day</h2>
 <ul class="cl">
 <li>Morning: check Home. Confirm or decline new requests.</li>
 <li>Check Messages and reply.</li>
-<li>Today &rarr; Pickups: On my way, Picked up.</li>
+<li>Ready to go for pickup? Today &rarr; Pickups</li>
 <li>In the Shop: count items, enter the amount due, start cleaning, mark ready.</li>
-<li>Today &rarr; Deliveries: On my way, Delivered, record payment.</li>
+<li>Ready for delivery run? Today &rarr; Deliveries</li>
 <li>End of day: check Needs Attention and Unpaid.</li>
 </ul>
-<p>New here? Start with <a href="../get-started/">getting your store set up</a>.</p>
 </section>
 </main>
 <footer>Questions? Write to <a href="mailto:support@cleanracer.com">support@cleanracer.com</a>. &copy; Clean Racer</footer>
