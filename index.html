@@ -72,9 +72,14 @@ h3{font-weight:600}
 .ico svg{width:20px;height:20px;fill:none;stroke:var(--tint);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .feat h3{font-size:17px;margin-bottom:4px}
 .feat p{color:var(--muted);font-size:15px}
-.phones3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;justify-items:center}
-.phones3 .phone{width:250px;border-radius:40px}
+.phones3{display:flex;gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(50% - 50vw);padding:4px 20px 24px max(20px,calc(50vw - 500px));scroll-padding-left:max(20px,calc(50vw - 500px));-webkit-overflow-scrolling:touch;scrollbar-width:thin;outline:none}
+#screens{overflow:hidden}
+.phones3 figure{flex:0 0 250px;scroll-snap-align:center}
+.phones3 .phone{width:250px;border-radius:40px;margin:0 auto}
 .phones3 .phone .screen{border-radius:32px}
+.rail-nav{display:flex;gap:8px;justify-content:flex-end;margin:-8px 0 10px}
+.rail-nav button{width:38px;height:38px;border-radius:19px;border:1px solid var(--line);background:#fff;color:var(--text);font-size:22px;line-height:1;cursor:pointer}
+.rail-nav button:hover{background:var(--grouped)}
 figure{text-align:center}
 figcaption{margin:16px auto 0;max-width:260px}
 figcaption b{display:block;font-size:17px;font-weight:600}
@@ -98,7 +103,7 @@ footer{padding:30px 0 50px;color:var(--faint);font-size:14px;line-height:1.6;bor
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 footer a{color:var(--faint);margin-right:14px;text-decoration:none}
 footer a:hover{color:var(--text)}
-@media(max-width:860px){.hero{grid-template-columns:1fr;gap:36px;padding:32px 0 56px}.phone-wrap{order:2}h1{font-size:36px}.grid,.plans,.phones3,.apps{grid-template-columns:1fr}section{padding:52px 0}.phones3{gap:40px}}
+@media(max-width:860px){.hero{grid-template-columns:1fr;gap:36px;padding:32px 0 56px}.phone-wrap{order:2}h1{font-size:36px}.grid,.plans,.apps{grid-template-columns:1fr}.rail-nav{display:none}section{padding:52px 0}}
 </style>
 </head>
 <body>
@@ -145,11 +150,16 @@ footer a:hover{color:var(--text)}
 </div></section>
 
 <section id="screens"><div class="wrap">
-  <div class="sec-head"><span class="tag">In the app</span><h2>From the doorstep to the counter.</h2><p>Every stop on a map, a quick count at intake, and the amount to collect at the door. Two taps per stop.</p></div>
-  <div class="phones3">
-    <figure><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-map.webp" width="620" height="1347" alt="The stops map in CR Business: today's selected pickups pinned across the city, with the list below."></div></div><figcaption><b>Every stop on a map</b><span>Pickups and deliveries, pinned. Start one and it's yours.</span></figcaption></figure>
-    <figure><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-intake.webp" width="620" height="1347" alt="Intake in CR Business: item counts and the amount due."></div></div><figcaption><b>Count it in, type the amount</b><span>No price lists to build.</span></figcaption></figure>
-    <figure><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-collect.webp" width="620" height="1347" alt="A delivery stop in CR Business: the customer's address, the amount to collect and an On my way button."></div></div><figcaption><b>Know what to collect</b><span>Every delivery shows the amount due.</span></figcaption></figure>
+  <div class="sec-head"><span class="tag">In the app</span><h2>From the doorstep to the counter.</h2><p>Every stop on a map, a quick count at intake, a photo at the door to prove it arrived, and cards in the app. Two taps per stop.</p></div>
+  <div class="rail-nav" aria-hidden="true"><button type="button" id="rail-prev" aria-label="Previous screens">‹</button><button type="button" id="rail-next" aria-label="Next screens">›</button></div>
+  <div class="phones3" id="rail" tabindex="0" role="region" aria-label="CR Business screens, scroll sideways">
+    <figure><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-map.webp" width="620" height="1347" alt="The stops map in CR Business: today's selected pickups pinned across the city, with the list below." loading="lazy"></div></div><figcaption><b>Every stop on a map</b><span>Pickups and deliveries, pinned. Select several and roll.</span></figcaption></figure>
+    <figure><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-today.webp" width="620" height="1347" alt="Today in CR Business: pickups, orders in the shop and deliveries on one shared list." loading="lazy"></div></div><figcaption><b>One list for the day</b><span>Everyone sees today's stops. Start one and it's yours.</span></figcaption></figure>
+    <figure><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-stop.webp" width="620" height="1347" alt="A pickup stop in CR Business: the address, the customer's note, Navigate, Call and Message, and one big On my way button." loading="lazy"></div></div><figcaption><b>Two taps per stop</b><span>On my way. Picked up. That's the whole job.</span></figcaption></figure>
+    <figure><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-intake.webp" width="620" height="1347" alt="Intake in CR Business: a store ticket number, item counts and a running total." loading="lazy"></div></div><figcaption><b>Count it in, type the amount</b><span>No price lists to build. Add your own ticket number.</span></figcaption></figure>
+    <figure><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-collect.webp" width="620" height="1347" alt="A delivery stop in CR Business: the customer's address, the amount to collect and an On my way button." loading="lazy"></div></div><figcaption><b>Know what to collect</b><span>Every delivery shows the amount due.</span></figcaption></figure>
+    <figure><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-photo.webp" width="620" height="1347" alt="Finishing a delivery in CR Business: the driver's photo of garments hanging on a customer's door, attached before tapping Delivered." loading="lazy"></div></div><figcaption><b>Photo at handoff</b><span>Proof it arrived, right in the app.</span></figcaption></figure>
+    <figure><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-cards.webp" width="620" height="1347" alt="Card Payments in CR Business: card payments are on, with the store's Stripe account and convenience fee." loading="lazy"></div></div><figcaption><b>Get paid by card</b><span>Customers pay in the app, straight into your own Stripe account.</span></figcaption></figure>
   </div>
 </div></section>
 
@@ -181,5 +191,11 @@ footer a:hover{color:var(--text)}
   <address style="font-style:normal;line-height:1.6">© 2026 <b style="color:var(--muted);font-weight:600">MOTHER PARKERSON LLC</b>, doing business as Clean Racer<br>603 Mininger Road, Souderton, PA 18954, USA</address>
   <span><a href="/support/">Support</a><a href="/terms/">Terms of Use</a><a href="/privacy/">Privacy Policy</a><a href="mailto:support@cleanracer.com">support@cleanracer.com</a></span>
 </div></footer>
+<script>
+(function(){var r=document.getElementById("rail");if(!r)return;var step=function(){return Math.round(r.clientWidth*0.8)};
+document.getElementById("rail-prev").onclick=function(){r.scrollBy({left:-step(),behavior:"smooth"})};
+document.getElementById("rail-next").onclick=function(){r.scrollBy({left:step(),behavior:"smooth"})};
+r.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){r.scrollBy({left:step(),behavior:"smooth"})}else if(e.key==="ArrowLeft"){r.scrollBy({left:-step(),behavior:"smooth"})}});})();
+</script>
 </body>
 </html>
