@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>CR Business · Pickup and delivery. No hardware, no POS.</title>
 <meta name="description" content="Add pickup and delivery to your dry cleaning business with just your phone: no POS to replace, no hardware to buy. One shared list, intake at the counter, payments recorded. Starter, Growth and Fleet plans.">
-<meta name="theme-color" content="#0B1F4D">
+<meta name="theme-color" content="#FFFFFF">
 <meta property="og:title" content="CR Business · Pickup and delivery. No hardware, no POS.">
 <meta property="og:description" content="The app for dry cleaners: pickups, intake and deliveries on one shared list.">
 <meta property="og:type" content="website">
@@ -23,10 +23,86 @@
 <link rel="icon" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Clean Racer","legalName":"MOTHER PARKERSON LLC","url":"https://cleanracer.com/","logo":"https://cleanracer.com/assets/cleanracer-icon.png","email":"support@cleanracer.com"}</script>
-<link rel="stylesheet" href="/assets/site.css">
+<style>
+/* The same tokens as the apps and the other pages: white, system type, light grey sections, one blue. */
+:root{color-scheme:light;--bg:#FFFFFF;--grouped:#F2F2F7;--text:#000000;--muted:#5C5C61;--faint:#8E8E93;--line:#C6C6C8;--tint:#0A60D6;--tint-soft:rgba(10,96,214,.10)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:17px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--tint)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.topbar{border-bottom:.5px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:700;font-size:18px;letter-spacing:-.01em}
+.brand img{width:30px;height:30px;border-radius:7px;display:block}
+nav ul{display:flex;gap:22px;list-style:none}
+nav ul a{font-size:15px;text-decoration:none;color:var(--muted)}
+nav ul a:hover{color:var(--text)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:56px 0 72px}
+.eyebrow{display:block;color:var(--tint);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+h1{font-size:44px;line-height:1.1;letter-spacing:-.025em;font-weight:700;margin:10px 0 18px}
+h1 em{font-style:normal;color:var(--muted)}
+.lede{color:var(--muted);font-size:19px;max-width:33em}
+.cta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:26px 0 18px}
+.btn{display:inline-block;padding:11px 20px;border-radius:12px;font-weight:600;font-size:16px;text-decoration:none}
+.btn.primary{background:var(--tint);color:#fff}
+.btn.plain{color:var(--tint);padding:11px 6px}
+.note{color:var(--faint);font-size:15px}
+.note b{color:var(--muted);font-weight:600}
+.phone-wrap{display:flex;justify-content:center}
+.phone{width:290px;border-radius:44px;border:1px solid var(--line);background:#fff;padding:8px;box-shadow:0 18px 40px -24px rgba(0,0,0,.3)}
+.phone .screen{border-radius:36px;overflow:hidden;background:var(--grouped)}
+.phone .screen img{display:block;width:100%;height:auto}
+.island{display:none}
+section{padding:72px 0}
+section.gray{background:var(--grouped)}
+.sec-head{max-width:640px;margin:0 0 36px}
+.tag{display:block;color:var(--tint);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+h2{font-size:30px;line-height:1.2;letter-spacing:-.02em;font-weight:700;margin:8px 0 10px}
+.sec-head p{color:var(--muted);font-size:18px}
+h3{font-weight:600}
+.apps{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.app{display:flex;gap:16px;align-items:center;background:#fff;border-radius:16px;padding:16px 18px}
+.app img{width:56px;height:56px;border-radius:13px;flex:none}
+.app h3{font-size:18px}
+.app p{color:var(--muted);font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.feat{background:#fff;border-radius:16px;padding:20px}
+.ico{width:36px;height:36px;border-radius:10px;background:var(--tint-soft);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.ico svg{width:20px;height:20px;fill:none;stroke:var(--tint);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.feat h3{font-size:17px;margin-bottom:4px}
+.feat p{color:var(--muted);font-size:15px}
+.phones3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;justify-items:center}
+.phones3 .phone{width:250px;border-radius:40px}
+.phones3 .phone .screen{border-radius:32px}
+figure{text-align:center}
+figcaption{margin:16px auto 0;max-width:260px}
+figcaption b{display:block;font-size:17px;font-weight:600}
+figcaption span{color:var(--muted);font-size:15px}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.plan{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+.plan.pro{border-color:var(--tint);box-shadow:0 0 0 1px var(--tint)}
+.plan h3{font-size:18px}
+.price{font-size:34px;font-weight:700;letter-spacing:-.02em;margin:6px 0 12px}
+.price small{font-size:15px;color:var(--muted);font-weight:500;letter-spacing:0}
+.plan ul{list-style:none;color:var(--muted);font-size:15px}
+.plan li{padding:7px 0;border-top:.5px solid var(--line)}
+.faq{margin-top:34px;max-width:760px}
+.faq details{border-top:.5px solid var(--line);padding:14px 2px}
+.faq summary{font-weight:600;cursor:pointer}
+.faq p{color:var(--muted);margin-top:8px}
+section.final{text-align:center;border-top:.5px solid var(--line)}
+section.final p{color:var(--muted);max-width:34em;margin:8px auto 22px}
+section.final .cta{justify-content:center;margin:0}
+footer{padding:30px 0 50px;color:var(--faint);font-size:14px;line-height:1.6;border-top:.5px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:var(--faint);margin-right:14px;text-decoration:none}
+footer a:hover{color:var(--text)}
+@media(max-width:860px){.hero{grid-template-columns:1fr;gap:36px;padding:32px 0 56px}.phone-wrap{order:2}h1{font-size:36px}.grid,.plans,.phones3,.apps{grid-template-columns:1fr}section{padding:52px 0}.phones3{gap:40px}}
+</style>
 </head>
-<body class="biz-page">
-<div class="band"><div class="wrap">
+<body>
+<div class="topbar"><div class="wrap">
   <nav aria-label="Main">
     <a class="brand" href="/"><img src="/assets/cleanracer-business-icon.png" alt="">Clean Racer - Business App</a>
     <ul>
@@ -35,7 +111,8 @@
       <li><a href="#plans">Plans</a></li>
     </ul>
   </nav>
-
+</div></div>
+<div class="wrap">
   <header class="hero">
     <div>
       <span class="eyebrow">For dry cleaners · CR Business</span>
@@ -47,9 +124,9 @@
       </div>
       <p class="note">Two apps, one account: <b>CR Business</b> for your team, <b>Clean Racer</b> for your customers.</p>
     </div>
-    <div class="phone-wrap"><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-home.webp" width="620" height="1347" alt="The CR Business app's Home screen: today at a glance, with pickups and deliveries to do."></div></div></div>
+    <div class="phone-wrap"><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-home.webp" width="620" height="1347" alt="The CR Business app's Home screen: new pickup requests to confirm, and an overview of the day."></div></div></div>
   </header>
-</div></div>
+</div>
 
 <section id="features" class="gray"><div class="wrap">
   <div class="sec-head"><span class="tag">CR Business</span><h2>Everything your team needs, nothing it doesn't.</h2><p>Built for the owner, the manager and the driver, on one shared list.</p></div>
@@ -68,15 +145,15 @@
 </div></section>
 
 <section id="screens"><div class="wrap">
-  <div class="sec-head"><span class="tag">In the app</span><h2>From the doorstep to the counter.</h2><p>Every stop on a map, a quick count at intake, and a photo at the door to prove it arrived. Two taps per stop.</p></div>
+  <div class="sec-head"><span class="tag">In the app</span><h2>From the doorstep to the counter.</h2><p>Every stop on a map, a quick count at intake, and the amount to collect at the door. Two taps per stop.</p></div>
   <div class="phones3">
-    <figure><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-map.webp" width="620" height="1347" alt="The Stops map in CR Business: today's pickups and deliveries pinned across the service area."></div></div><figcaption><b>Every stop on a map</b><span>Pickups and deliveries, pinned. Start one and it's yours.</span></figcaption></figure>
+    <figure><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-map.webp" width="620" height="1347" alt="The stops map in CR Business: today's selected pickups pinned across the city, with the list below."></div></div><figcaption><b>Every stop on a map</b><span>Pickups and deliveries, pinned. Start one and it's yours.</span></figcaption></figure>
     <figure><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-intake.webp" width="620" height="1347" alt="Intake in CR Business: item counts and the amount due."></div></div><figcaption><b>Count it in, type the amount</b><span>No price lists to build.</span></figcaption></figure>
-    <figure><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-photo.webp" width="620" height="1347" alt="Finishing a delivery in CR Business: the driver's photo of garments hanging on a customer's door, attached before tapping Done."></div></div><figcaption><b>Photo at handoff</b><span>Proof it arrived, right in the app.</span></figcaption></figure>
+    <figure><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-collect.webp" width="620" height="1347" alt="A delivery stop in CR Business: the customer's address, the amount to collect and an On my way button."></div></div><figcaption><b>Know what to collect</b><span>Every delivery shows the amount due.</span></figcaption></figure>
   </div>
 </div></section>
 
-<section id="plans"><div class="wrap">
+<section id="plans" class="gray"><div class="wrap">
   <div class="sec-head"><span class="tag">Plans</span><h2>Simple pricing for cleaners.</h2><p>Every plan includes every feature and unlimited customers. They differ only in how many drivers you have and how many stops your drivers make each month.</p></div>
   <div class="plans">
     <div class="plan"><h3>Starter</h3><div class="price">$19.99<small> / month</small></div>
