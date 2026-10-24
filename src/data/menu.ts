@@ -6,6 +6,7 @@ export const menu: MenuGroup[] = [
   { links: [
     { label: "For Cleaners", href: "/" },
     { label: "For Customers", href: "/customers/" },
+    { label: "Pricing", href: "/pricing/" },
     { label: "About Us", href: "/about/" },
   ] },
   { heading: "Guides", links: [

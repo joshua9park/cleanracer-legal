@@ -1,0 +1,72 @@
+---
+import Base from "../../layouts/Base.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import PlanCards from "../../components/PlanCards.astro";
+import Faq from "../../components/Faq.astro";
+import "../../styles/marketing.css";
+---
+<Base title="Pricing · CR Business" description="CR Business plans start at $19.99 a month. Every plan includes every feature and unlimited customers. See what card payments in the app cost." canonical="https://cleanracer.com/pricing/" image="biz">
+<SiteHeader />
+
+<section style="padding:56px 0 40px"><div class="wrap">
+  <span class="eyebrow">Pricing</span>
+  <h1>Simple pricing for cleaners.</h1>
+  <p class="lede">Every plan includes every feature and unlimited customers. They differ only in how many drivers you have and how many stops your drivers make each month.</p>
+</div></section>
+
+<section class="gray"><div class="wrap">
+  <PlanCards />
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-head"><span class="tag">Card payments</span><h2>What taking cards in the app costs.</h2><p>It's optional. Your customers can always pay the driver or the counter instead, and nothing about your plan changes.</p></div>
+  <div class="fees">
+    <div class="fee"><h3>Stripe's card fee</h3><p>About 2.9% + 30¢ of each payment, paid to Stripe, like any card terminal. The money goes straight to your own Stripe account. We never hold it.</p></div>
+    <div class="fee"><h3>Your convenience fee</h3><p>Optional. You choose a flat fee from $0 to $3 (the default is $1.25) that customers pay on top of what they owe, and you keep it. It's always $0 in CT, ME, MA and PR.</p></div>
+    <div class="fee"><h3>Our software fee</h3><p>A flat $1.25 per in-app payment, taken from the payment. If your convenience fee is lower, you cover the difference. If it's higher, you keep it.</p></div>
+  </div>
+  <div class="calc">
+    <h3>An example</h3>
+    <p class="calc-intro">A customer owes $50.00 and pays in the app. Your convenience fee is the default $1.25.</p>
+    <table>
+      <tr><td>Order amount</td><td>$50.00</td></tr>
+      <tr><td>Your convenience fee</td><td>+ $1.25</td></tr>
+      <tr class="total"><td>Customer pays</td><td>$51.25</td></tr>
+      <tr><td>Stripe's card fee (about 2.9% + 30¢)</td><td>− $1.79</td></tr>
+      <tr><td>Our software fee</td><td>− $1.25</td></tr>
+      <tr class="total"><td>Lands in your Stripe account</td><td>$48.21</td></tr>
+    </table>
+    <p class="calc-note">Your $1.25 convenience fee covers our $1.25 software fee, so taking a card costs you what Stripe charges: $1.79 on this order. Stripe sets its own rates and can change them. This example uses its standard US card rate.</p>
+  </div>
+</div></section>
+
+<section class="gray"><div class="wrap">
+  <div class="sec-head"><span class="tag">Questions</span><h2>Good to know.</h2></div>
+  <Faq />
+</div></section>
+
+<section class="final"><div class="wrap">
+  <h2>Ready to run it your way?</h2>
+  <p>CR Business is on its way to the App Store and Google Play. Write to us and we'll walk you through applying.</p>
+  <div class="cta"><a class="btn primary" href="mailto:application@cleanracer.com?subject=I%27d%20like%20to%20join%20Clean%20Racer">Get in touch</a></div>
+</div></section>
+
+<SiteFooter />
+</Base>
+
+<style is:global>
+.fees{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.fee{background:var(--grouped);border-radius:16px;padding:22px 22px 10px}
+.fee h3{font-size:17px;margin-bottom:8px}
+.fee p{color:var(--muted);font-size:15.5px}
+.calc{margin-top:22px;max-width:560px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 24px 6px}
+.calc h3{font-size:18px}
+.calc-intro{color:var(--muted);margin:4px 0 14px}
+.calc table{width:100%;border-collapse:collapse;font-size:16px;margin-bottom:12px}
+.calc td{padding:9px 0;border-bottom:.5px solid var(--line);color:var(--muted)}
+.calc td:last-child{text-align:right;white-space:nowrap}
+.calc tr.total td{color:var(--text);font-weight:700;border-bottom:1px solid var(--line)}
+.calc-note{color:var(--muted);font-size:15px;margin:0 0 18px}
+@media(max-width:860px){.fees{grid-template-columns:1fr}}
+</style>
