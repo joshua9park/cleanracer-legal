@@ -22,9 +22,9 @@ import "../../styles/marketing.css";
 <section><div class="wrap">
   <div class="sec-head"><span class="tag">Card payments</span><h2>What taking cards in the app costs.</h2><p>It's optional. Your customers can always pay the driver or the counter instead, and nothing about your plan changes.</p></div>
   <div class="fees">
-    <div class="fee"><h3>Stripe's card fee</h3><p>About 2.9% + 30¢ of each payment, paid to Stripe, like any card terminal. The money goes straight to your own Stripe account. We never hold it.</p></div>
-    <div class="fee"><h3>Your convenience fee</h3><p>Optional. You choose a flat fee from $0 to $3 (the default is $1.25) that customers pay on top of what they owe, and you keep it. It's always $0 in CT, ME, MA and PR.</p></div>
-    <div class="fee"><h3>Our software fee</h3><p>A flat $1.25 per in-app payment, taken from the payment. If your convenience fee is lower, you cover the difference. If it's higher, you keep it.</p></div>
+    <div class="fee"><span class="fee-to">Charged to you</span><h3>Stripe's card fee</h3><p>About 2.9% + 30¢ of each payment, paid to Stripe, like any card terminal. The money goes straight to your own Stripe account. We never hold it.</p></div>
+    <div class="fee"><span class="fee-to">Charged to you</span><h3>Our software fee</h3><p>A flat $1.25 per in-app payment, taken from the payment. If your convenience fee is lower, you cover the difference. If it's higher, you keep it.</p></div>
+    <div class="fee fee-customer"><span class="fee-to">Charged to your customer</span><h3>Your convenience fee</h3><p>Optional, and yours to keep. You choose a flat fee from $0 to $3 (the default is $1.25) that your customer pays on top of what they owe. It's always $0 in CT, ME, MA and PR.</p></div>
   </div>
   <div class="calc">
     <h3>An example</h3>
@@ -57,7 +57,10 @@ import "../../styles/marketing.css";
 
 <style is:global>
 .fees{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.fee{background:var(--grouped);border-radius:16px;padding:22px 22px 10px}
+.fee{background:var(--grouped);border-radius:16px;padding:20px 22px 10px}
+.fee-to{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#3B3B42;background:rgba(0,0,0,.07);border-radius:99px;padding:4px 10px;margin-bottom:12px}
+.fee-customer{background:#EAF2FD}
+.fee-customer .fee-to{color:var(--tint);background:rgba(10,96,214,.14)}
 .fee h3{font-size:17px;margin-bottom:8px}
 .fee p{color:var(--muted);font-size:15.5px}
 .calc{margin-top:22px;max-width:560px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 24px 6px}
