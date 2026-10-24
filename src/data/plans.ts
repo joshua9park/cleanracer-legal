@@ -1,11 +1,11 @@
 // The plans and the pricing questions, in one place: the home page and the pricing page both read this, so they cannot disagree.
 // The limits must match the app's own plan definitions (packages/domain/src/plans.ts in the cleanracer repo) and the subscription_plans table.
-export type Plan = { name: string; price: string; stops: string; drivers: string; featured?: boolean };
+export type Plan = { name: string; price: string; stops: string; drivers: string; featured?: boolean; driverCount: string; stopCount: string; cycles: string };
 
 export const plans: Plan[] = [
-  { name: "Starter", price: "$19.99", stops: "150 stops a month", drivers: "1 driver" },
-  { name: "Growth", price: "$39.99", stops: "500 stops a month", drivers: "Up to 5 drivers", featured: true },
-  { name: "Fleet", price: "$129.99", stops: "10,000 stops a month", drivers: "Up to 25 drivers" },
+  { name: "Starter", price: "$19.99", stops: "150 stops a month", drivers: "1 driver", driverCount: "1", stopCount: "150", cycles: "About 75" },
+  { name: "Growth", price: "$39.99", stops: "500 stops a month", drivers: "Up to 5 drivers", featured: true, driverCount: "Up to 5", stopCount: "500", cycles: "About 250" },
+  { name: "Fleet", price: "$129.99", stops: "10,000 stops a month", drivers: "Up to 25 drivers", driverCount: "Up to 25", stopCount: "10,000", cycles: "About 5,000" },
 ];
 
 // Answers are trusted HTML written here (not user input).
