@@ -1,0 +1,36 @@
+---
+// The plans side by side, from src/data/plans.ts. Used on the pricing page (the home page uses PlanCards).
+import { plans } from "../data/plans";
+---
+<div class="pt-wrap">
+  <table class="pt">
+    <thead>
+      <tr><th scope="col"><span class="sr">Plan</span></th>{plans.map((p) => <th scope="col" class:list={{ pro: p.featured }}>{p.name}</th>)}</tr>
+    </thead>
+    <tbody>
+      <tr class="pt-price"><th scope="row">Price</th>{plans.map((p) => <td class:list={{ pro: p.featured }}><b>{p.price}</b><small>per month</small></td>)}</tr>
+      <tr><th scope="row">Drivers</th>{plans.map((p) => <td class:list={{ pro: p.featured }}>{p.driverCount}</td>)}</tr>
+      <tr><th scope="row">Stops a month</th>{plans.map((p) => <td class:list={{ pro: p.featured }}>{p.stopCount}</td>)}</tr>
+      <tr><th scope="row">Pickup-and-delivery trips</th>{plans.map((p) => <td class:list={{ pro: p.featured }}>{p.cycles}</td>)}</tr>
+      <tr><th scope="row">Customers</th>{plans.map((p) => <td class:list={{ pro: p.featured }}>Unlimited</td>)}</tr>
+      <tr><th scope="row">Every feature</th>{plans.map((p) => <td class:list={{ pro: p.featured }}>Included</td>)}</tr>
+    </tbody>
+  </table>
+</div>
+<p class="pt-note">A trip is one pickup and one delivery, which is two stops.</p>
+<style>
+.pt-wrap{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:16px}
+.pt{width:100%;border-collapse:separate;border-spacing:0;font-size:16px}
+.pt th,.pt td{padding:15px 18px;text-align:center;border-bottom:.5px solid var(--line)}
+.pt tbody tr:last-child th,.pt tbody tr:last-child td{border-bottom:0}
+.pt thead th{font-size:18px;font-weight:700;padding-top:20px;padding-bottom:16px}
+.pt tbody th{text-align:left;font-weight:500;color:var(--muted)}
+.pt td{color:var(--text)}
+.pt .pro{background:var(--tint-soft)}
+.pt thead th.pro{color:var(--tint)}
+.pt .pt-price b{display:block;font-size:26px;letter-spacing:-.02em;line-height:1.15}
+.pt .pt-price small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
+.pt-note{color:var(--muted);font-size:14.5px;margin:12px 4px 0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media(max-width:640px){.pt{font-size:14px}.pt th,.pt td{padding:12px 6px}.pt tbody th{padding-left:12px;width:30%}.pt .pt-price b{font-size:18px}.pt .pt-price small{font-size:12px}.pt thead th{font-size:15px}}
+</style>
