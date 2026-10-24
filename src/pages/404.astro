@@ -1,0 +1,28 @@
+---
+import Base from "../layouts/Base.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import "../styles/site.css";
+---
+<Base title="Page not found \u00b7 Clean Racer" noindex themeColor="#0B1F4D">
+<Fragment slot="head">
+
+</Fragment>
+
+<div class="band"><div class="wrap">
+  <SiteHeader to="support" dark />
+<header class="hero" style="grid-template-columns:1fr;padding:70px 0 110px">
+    <div>
+      <span class="eyebrow">404</span>
+      <h1>Wrong turn. <em>Let's get you back on track.</em></h1>
+      <p class="lede">That page doesn't exist, or it has moved.</p>
+      <div class="cta">
+        <a class="btn primary" href="/">CR Business home</a>
+        <a class="btn plain" href="/customers/">Clean Racer for customers</a>
+        <a class="btn plain" href="/support/">Support</a>
+      </div>
+    </div>
+  </header>
+</div></div>
+<SiteFooter />
+</Base>

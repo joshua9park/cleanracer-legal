@@ -1,35 +1,17 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Get Started with CR Business · Clean Racer</title><meta name="description" content="Set up your store in CR Business: hours, pickup windows, service area, items, team, Stripe card payments and your customer QR code.">
-<meta name="theme-color" content="#FFFFFF">
-<link rel="canonical" href="https://cleanracer.com/guides/get-started/">
-<meta property="og:title" content="Get Started with CR Business · Clean Racer">
-<meta property="og:description" content="Set up your store in CR Business: hours, pickup windows, service area, items, team, Stripe card payments and your customer QR code.">
-<meta property="og:url" content="https://cleanracer.com/guides/get-started/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Clean Racer">
-<meta property="og:image" content="https://cleanracer.com/assets/og-biz.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="CR Business">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Get Started with CR Business · Clean Racer">
-<meta name="twitter:description" content="Set up your store in CR Business: hours, pickup windows, service area, items, team, Stripe card payments and your customer QR code.">
-<meta name="twitter:image" content="https://cleanracer.com/assets/og-biz.png"><link rel="icon" href="/assets/favicon.png"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<style>
-/* The same tokens as the apps and the home page */
+---
+import Base from "../../../layouts/Base.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import SiteFooter from "../../../components/SiteFooter.astro";
+---
+<Base title="Get Started with CR Business \u00b7 Clean Racer" description="Set up your store in CR Business: hours, pickup windows, service area, items, team, Stripe card payments and your customer QR code." canonical="https://cleanracer.com/guides/get-started/" image="biz">
+<Fragment slot="head">
+<style is:global>
 :root{color-scheme:light;
   --bg:#FFFFFF;--grouped:#F2F2F7;--card:#FFFFFF;--text:#000000;--muted:#5C5C61;--faint:#8E8E93;--line:#C6C6C8;
   --tint:#0A60D6;--tint-soft:rgba(10,96,214,.12)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--grouped);color:var(--text);font:17px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:var(--tint)}
-.bar{background:var(--bg);border-bottom:.5px solid var(--line)}
-.bar .in{max-width:760px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:700;font-size:20px;letter-spacing:-.01em}
-.brand img{width:30px;height:30px;border-radius:7px;display:block}
-.bar nav a{font-size:15px;text-decoration:none;color:var(--muted);margin-left:18px}
-.bar nav a:hover,.bar nav a[aria-current]{color:var(--text)}
 main{max-width:760px;margin:0 auto;padding:36px 20px 70px}
 h1{font-size:34px;line-height:1.12;letter-spacing:-.025em;font-weight:700;margin-bottom:6px}
 .kicker{color:var(--tint);font-size:14px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px}
@@ -41,19 +23,23 @@ h2{font-size:21px;line-height:1.25;letter-spacing:-.01em;margin:0 0 8px;display:
 .where{display:inline-block;background:var(--grouped);border-radius:8px;padding:3px 10px;font-size:15px;font-weight:600;margin:0 0 10px;color:var(--text)}
 .tag{font-size:12px;font-weight:700;color:var(--tint);background:var(--tint-soft);border-radius:6px;padding:2px 8px;text-transform:uppercase;letter-spacing:.04em}
 p,li{margin:0 0 12px;color:var(--muted)}
-ul,ol{padding-left:22px;margin:0 0 4px}ul ul{margin-top:6px}
+ul,ol{padding-left:22px;margin:0 0 4px}
+ul ul{margin-top:6px}
 b,strong{color:var(--text)}
-table{width:100%;border-collapse:collapse;font-size:16px;margin:4px 0 14px}th,td{text-align:left;padding:8px 6px;border-bottom:.5px solid var(--line);color:var(--muted)}th{color:var(--faint);font-weight:600;font-size:14px}td:first-child{color:var(--text)}
+table{width:100%;border-collapse:collapse;font-size:16px;margin:4px 0 14px}
+th,td{text-align:left;padding:8px 6px;border-bottom:.5px solid var(--line);color:var(--muted)}
+th{color:var(--faint);font-weight:600;font-size:14px}
+td:first-child{color:var(--text)}
 .sub{background:var(--grouped);border-radius:12px;padding:14px 16px 4px;margin:6px 0 14px}
-.cl{list-style:none;padding-left:0}.cl li:before{content:"\2610\00a0\00a0";color:var(--tint)}
-footer{max-width:760px;margin:0 auto;padding:0 20px 50px;color:var(--faint);font-size:14px;line-height:1.5}
-footer a{text-decoration:none}
-@media(max-width:560px){.box,.step{padding:18px 18px 8px}h1{font-size:30px}}
-@media print{body{background:#fff}.bar{display:none}.step,.box{break-inside:avoid;border:1px solid #ddd}}
-</style></head>
-<body>
-<header class="bar"><div class="in"><a class="brand" href="/"><img src="/assets/cleanracer-icon.png" alt="">Clean Racer</a>
-<nav><a href="/support/">Support</a><a href="/terms/">Terms of Use</a><a href="/privacy/">Privacy Policy</a></nav></div></header>
+.cl{list-style:none;padding-left:0}
+.cl li:before{content:"\2610\00a0\00a0";color:var(--tint)}
+@media(max-width:560px){.box,.step{padding:18px 18px 8px}
+h1{font-size:30px}}
+@media print{body{background:#fff}
+.step,.box{break-inside:avoid;border:1px solid #ddd}}
+</style>
+</Fragment>
+<SiteHeader to="support" narrow />
 <main>
 <div class="kicker">CR Business guide</div>
 <h1>Get Started with CR Business</h1>
@@ -194,5 +180,5 @@ footer a{text-decoration:none}
 <p>Next: <a href="../running-orders/">how to run your orders</a>, from request to delivery.</p>
 </section>
 </main>
-<footer>Questions? Write to <a href="mailto:support@cleanracer.com">support@cleanracer.com</a>. &copy; Clean Racer</footer>
-</body></html>
+<SiteFooter narrow />
+</Base>

@@ -1,35 +1,17 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Support · Clean Racer</title><meta name="description" content="Get help with the Clean Racer and CR Business apps.">
-<meta name="theme-color" content="#FFFFFF">
-<link rel="canonical" href="https://cleanracer.com/support/">
-<meta property="og:title" content="Support · Clean Racer">
-<meta property="og:description" content="Get help with the Clean Racer and CR Business apps.">
-<meta property="og:url" content="https://cleanracer.com/support/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Clean Racer">
-<meta property="og:image" content="https://cleanracer.com/assets/og-cust.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Clean Racer">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Support · Clean Racer">
-<meta name="twitter:description" content="Get help with the Clean Racer and CR Business apps.">
-<meta name="twitter:image" content="https://cleanracer.com/assets/og-cust.png"><link rel="icon" href="/assets/favicon.png"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<style>
-/* The same tokens as the apps and the home page */
+---
+import Base from "../../layouts/Base.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+---
+<Base title="Support \u00b7 Clean Racer" description="Get help with the Clean Racer and CR Business apps." canonical="https://cleanracer.com/support/">
+<Fragment slot="head">
+<style is:global>
 :root{color-scheme:light;
   --bg:#FFFFFF;--grouped:#F2F2F7;--card:#FFFFFF;--text:#000000;--muted:#5C5C61;--faint:#8E8E93;--line:#C6C6C8;
   --tint:#0A60D6;--tint-soft:rgba(10,96,214,.12)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--grouped);color:var(--text);font:17px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:var(--tint)}
-.bar{background:var(--bg);border-bottom:.5px solid var(--line)}
-.bar .in{max-width:760px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:700;font-size:20px;letter-spacing:-.01em}
-.brand img{width:30px;height:30px;border-radius:7px;display:block}
-.bar nav a{font-size:15px;text-decoration:none;color:var(--muted);margin-left:18px}
-.bar nav a:hover,.bar nav a[aria-current]{color:var(--text)}
 main{max-width:760px;margin:0 auto;padding:36px 20px 70px}
 h1{font-size:34px;line-height:1.12;letter-spacing:-.025em;font-weight:700;margin-bottom:6px}
 .date{color:var(--faint);font-size:15px;margin-bottom:22px}
@@ -40,13 +22,11 @@ p,li{margin:0 0 12px;color:var(--muted)}
 ul{padding-left:22px}
 b{color:var(--text)}
 mark{background:rgba(255,204,0,.35);color:inherit;border-radius:4px;padding:0 4px}
-footer{max-width:760px;margin:0 auto;padding:0 20px 50px;color:var(--faint);font-size:14px;line-height:1.5}
-footer a{text-decoration:none}
-@media(max-width:560px){.doc{padding:22px 18px 8px}h1{font-size:30px}}
-</style></head>
-<body>
-<header class="bar"><div class="in"><a class="brand" href="/"><img src="/assets/cleanracer-icon.png" alt="">Clean Racer</a>
-<nav><a href="/support/" aria-current="page">Support</a><a href="/terms/">Terms of Use</a><a href="/privacy/">Privacy Policy</a></nav></div></header>
+@media(max-width:560px){.doc{padding:22px 18px 8px}
+h1{font-size:30px}}
+</style>
+</Fragment>
+<SiteHeader to="support" narrow />
 <main>
 <h1>Support</h1>
 <p class="date">Help with the Clean Racer and CR Business apps</p>
@@ -76,5 +56,5 @@ footer a{text-decoration:none}
 <p><a href="/terms/">Terms of Use</a> and <a href="/privacy/">Privacy Policy</a>. Clean Racer is provided by MOTHER PARKERSON LLC, doing business as Clean Racer.</p>
 </div>
 </main>
-<footer>Clean Racer is provided by MOTHER PARKERSON LLC, doing business as Clean Racer. Questions? Write to <a href="mailto:support@cleanracer.com">support@cleanracer.com</a>. See also our <a href="/privacy/">Privacy Policy</a>.</footer>
-</body></html>
+<SiteFooter narrow />
+</Base>
