@@ -1,0 +1,22 @@
+---
+// The three plan cards, from src/data/plans.ts. Used on the home page and the pricing page.
+import { plans } from "../data/plans";
+---
+<div class="plans">
+  {plans.map((p) => (
+    <div class:list={["plan", { pro: p.featured }]}>
+      <h3>{p.name}</h3>
+      <div class="price">{p.price}<small> / month</small></div>
+      <ul><li>{p.stops}</li><li>{p.drivers}</li><li>Unlimited customers</li><li>Every feature included</li></ul>
+    </div>
+  ))}
+</div>
+<style>
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.plan{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+.plan.pro{border-color:var(--tint);box-shadow:0 0 0 1px var(--tint)}
+.plan h3{font-size:18px}
+.plan ul{list-style:none;color:var(--muted);font-size:15px}
+.plan li{padding:7px 0;border-top:.5px solid var(--line)}
+@media(max-width:860px){.plans{grid-template-columns:1fr}}
+</style>
