@@ -1,14 +1,39 @@
 ---
-// The header every page shares: the Clean Racer logo on the left and one link on the right.
+// The header every page shares: a menu button and the Clean Racer logo on the left, and one link on the right.
 // The link is "Support" on every page except the two front doors: the cleaners page offers "For Customers", the customers page offers "For Cleaners".
+// The menu is a slide-in panel built on the browser's own popover feature (no JavaScript); its pages are listed in src/data/menu.ts.
+import { menu } from "../data/menu";
 interface Props { to?: "support" | "customers" | "cleaners"; dark?: boolean; narrow?: boolean }
 const { to = "support", dark = false, narrow = false } = Astro.props;
 const links = { support: { href: "/support/", text: "Support" }, customers: { href: "/customers/", text: "For Customers" }, cleaners: { href: "/", text: "For Cleaners" } };
 const link = links[to];
+const here = Astro.url.pathname;
+const logo = dark ? "/assets/email-logo-white.png" : "/assets/email-logo.png";
 ---
 <header class:list={["sx-bar", { dark, narrow }]}>
   <div class="in">
-    <a class="sx-brand" href="/"><img src={dark ? "/assets/email-logo-white.png" : "/assets/email-logo.png"} alt="Clean Racer" width="148" height="32"></a>
+    <div class="sx-left">
+      <button class="sx-burger" type="button" popovertarget="sx-menu" aria-label="Open menu" aria-controls="sx-menu">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <a class="sx-brand" href="/"><img src={logo} alt="Clean Racer" width="148" height="32"></a>
+    </div>
     <a class="sx-link" href={link.href}>{link.text}</a>
   </div>
+  <nav id="sx-menu" class="sx-menu" popover aria-label="Main menu">
+    <div class="sx-menu-top">
+      <a class="sx-brand" href="/"><img src={logo} alt="Clean Racer" width="148" height="32"></a>
+      <button class="sx-close" type="button" popovertarget="sx-menu" popovertargetaction="hide" aria-label="Close menu">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    {menu.map((group) => (
+      <div class="sx-group">
+        {group.heading && <p class="sx-heading">{group.heading}</p>}
+        <ul>
+          {group.links.map((l) => <li><a href={l.href} aria-current={l.href === here ? "page" : undefined}>{l.label}</a></li>)}
+        </ul>
+      </div>
+    ))}
+  </nav>
 </header>
