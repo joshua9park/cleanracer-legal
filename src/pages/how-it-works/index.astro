@@ -1,0 +1,84 @@
+---
+import Base from "../../layouts/Base.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import "../../styles/marketing.css";
+
+// Getting started: the four steps from application to a first customer. Every day: one row each, with an app screenshot beside it.
+const start = [
+  { title: "Apply in the app", text: "Download CR Business and tell us about your store: its name, address and hours, and a photo of your business license." },
+  { title: "We check it's you", text: "We verify your license and call the number on your Google listing. It usually takes one to two business days." },
+  { title: "Subscribe and open your store", text: "Pick a plan through the App Store or Google Play. Your store opens the moment the purchase is confirmed, and setup takes about 20 minutes." },
+  { title: "Invite your customers", text: "Share your QR code or link. Customers join your store in the Clean Racer app and request pickups." },
+];
+const daily = [
+  { title: "Confirm the requests", text: "New pickup requests show up on your Home screen. Tap Confirm, or Decline. Your customer is told either way.", img: "business-home", alt: "The CR Business app's Home screen: new pickup requests to confirm, and an overview of the day." },
+  { title: "Two taps a stop", text: "Your driver taps On my way, and your customer gets a heads-up. Then Picked up, or Delivered. Everyone sees one shared list, so there's nothing to dispatch.", img: "business-stop", alt: "A pickup stop in CR Business: the address, the customer's note, Navigate, Call and Message, and one big On my way button." },
+  { title: "Get paid your way", text: "Cash, card at the door, or card in the app, straight into your own Stripe account. Every payment is recorded.", img: "business-cards", alt: "Card Payments in CR Business: card payments are on, with the store's Stripe account and convenience fee." },
+];
+const promise = [
+  { title: "No hardware, no POS to replace", text: "It runs on the phones you already have." },
+  { title: "No location tracking", text: "Customers get a simple heads-up when the driver is on the way. Never a map, never an ETA." },
+  { title: "Your money stays yours", text: "Card payments go straight to your own Stripe account. We never hold it." },
+];
+---
+<Base title="How It Works · CR Business" description="From your application to your first pickup, then two taps a stop. How CR Business works for dry cleaners." canonical="https://cleanracer.com/how-it-works/" image="biz">
+<SiteHeader />
+
+<section style="padding:56px 0 40px"><div class="wrap">
+  <span class="eyebrow">How it works</span>
+  <h1>From application to your first pickup.</h1>
+  <p class="lede">A few days to open your store. Two taps to run every stop.</p>
+</div></section>
+
+<section class="gray"><div class="wrap">
+  <div class="sec-head"><span class="tag">Getting started</span><h2>Open your store in four steps.</h2></div>
+  <ol class="hiw-steps">
+    {start.map((s, i) => <li><span class="hiw-n">{i + 1}</span><div><h3>{s.title}</h3><p>{s.text}</p></div></li>)}
+  </ol>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-head"><span class="tag">Every day</span><h2>Then it runs on two taps.</h2></div>
+  {daily.map((d) => (
+    <div class="hiw-row">
+      <div class="hiw-text"><h3>{d.title}</h3><p>{d.text}</p></div>
+      <div class="phone-wrap"><div class="phone real"><div class="screen"><img src={`/assets/shots/${d.img}.webp`} width="620" height="1347" alt={d.alt} loading="lazy"></div></div></div>
+    </div>
+  ))}
+</div></section>
+
+<section class="gray"><div class="wrap">
+  <div class="sec-head"><span class="tag">What you can count on</span><h2>The simple promises.</h2></div>
+  <div class="hiw-promise">
+    {promise.map((p) => <div><h3>{p.title}</h3><p>{p.text}</p></div>)}
+  </div>
+</div></section>
+
+<section class="final"><div class="wrap">
+  <h2>Ready to run it your way?</h2>
+  <p>CR Business is on its way to the App Store and Google Play. Write to us and we'll walk you through applying.</p>
+  <div class="cta"><a class="btn primary" href="mailto:application@cleanracer.com?subject=I%27d%20like%20to%20join%20Clean%20Racer">Get in touch</a><a class="btn plain" href="/pricing/">See pricing →</a></div>
+</div></section>
+
+<SiteFooter />
+</Base>
+
+<style is:global>
+.hiw-steps{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:0;padding:0}
+.hiw-steps li{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.hiw-n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--tint);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.hiw-steps h3,.hiw-text h3,.hiw-promise h3{font-size:19px;line-height:1.25;margin:2px 0 6px}
+.hiw-steps p,.hiw-text p,.hiw-promise p{color:var(--muted);font-size:16px}
+.hiw-row{display:grid;grid-template-columns:1fr 320px;gap:56px;align-items:center;padding:26px 0}
+.hiw-row+.hiw-row{border-top:.5px solid var(--line)}
+.hiw-row:nth-of-type(even){grid-template-columns:320px 1fr}
+.hiw-row:nth-of-type(even) .hiw-text{order:2}
+.hiw-text{max-width:30em}
+.hiw-text h3{font-size:24px;letter-spacing:-.015em;margin-bottom:8px}
+.hiw-text p{font-size:18px}
+.hiw-promise{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.hiw-promise>div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 22px 10px}
+section.final .cta .btn+.btn{margin-left:10px}
+@media(max-width:860px){.hiw-steps,.hiw-promise{grid-template-columns:1fr}.hiw-row,.hiw-row:nth-of-type(even){grid-template-columns:1fr;gap:22px}.hiw-row:nth-of-type(even) .hiw-text{order:0}.hiw-row .phone-wrap{order:2}}
+</style>

@@ -13,6 +13,5 @@ export const faq: { q: string; a: string }[] = [
   { q: "What counts as a stop?", a: "A stop is each time your driver stops the van to make a pickup or a doorstep delivery. If you drop off several orders at the same house on one trip, that still counts as one stop. Starter's 150 stops cover about 75 full pickup-and-delivery cycles." },
   { q: "What if we go over our stops?", a: "We'll let you know as you get close to your limit. A store that goes well past it has 15 days to move to a bigger plan, and we never stop a driver mid-route." },
   { q: "What if I need more than Fleet covers?", a: "Running more than Fleet covers? <a href=\"mailto:support@cleanracer.com\">Write to us</a> and we'll work out a plan for your volume." },
-  { q: "Do my customers pay to use the app?", a: "No. The Clean Racer app is free for your customers. If they choose to pay by card in the app, your convenience fee (if you set one) is added, and they can always pay the driver or the counter instead." },
   { q: "How do I join?", a: "You apply in the CR Business app. We check your business license and call the number on your Google listing, then you subscribe through the App Store or Google Play to open your store. Cancel any time in your App Store or Google Play settings." },
 ];
