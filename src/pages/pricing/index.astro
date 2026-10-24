@@ -4,6 +4,7 @@ import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import PlanCards from "../../components/PlanCards.astro";
 import Faq from "../../components/Faq.astro";
+import { featured, features } from "../../data/features";
 import "../../styles/marketing.css";
 ---
 <Base title="Pricing · CR Business" description="CR Business plans start at $19.99 a month. Every plan includes every feature and unlimited customers. See what card payments in the app cost." canonical="https://cleanracer.com/pricing/" image="biz">
@@ -20,6 +21,14 @@ import "../../styles/marketing.css";
 </div></section>
 
 <section><div class="wrap">
+  <div class="sec-head"><span class="tag">Included in every plan</span><h2>Every plan includes everything.</h2><p>The plans differ only in drivers and stops. Every feature is in all three.</p></div>
+  <div class="inc-hero"><div><h3>{featured.title}</h3><p>{featured.text}</p></div><a class="btn light" href={featured.link.href}>{featured.link.text} ↓</a></div>
+  <div class="inc-grid">
+    {features.map((f) => <div class="inc"><h3>{f.title}</h3><p>{f.text}</p></div>)}
+  </div>
+</div></section>
+
+<section class="gray" id="card-payments"><div class="wrap">
   <div class="sec-head"><span class="tag">Card payments</span><h2>What taking cards in the app costs.</h2><p>It's optional. Your customers can always pay the driver or the counter instead, and nothing about your plan changes.</p></div>
   <div class="fees">
     <div class="fee"><span class="fee-to">Charged to you</span><h3>Stripe's card fee</h3><p>About 2.9% + 30¢ of each payment, paid to Stripe, like any card terminal. The money goes straight to your own Stripe account. We never hold it.</p></div>
@@ -41,7 +50,7 @@ import "../../styles/marketing.css";
   </div>
 </div></section>
 
-<section class="gray"><div class="wrap">
+<section><div class="wrap">
   <div class="sec-head"><span class="tag">Questions</span><h2>Good to know.</h2></div>
   <Faq />
 </div></section>
@@ -56,6 +65,14 @@ import "../../styles/marketing.css";
 </Base>
 
 <style is:global>
+.inc-hero{display:flex;align-items:center;justify-content:space-between;gap:24px;background:var(--tint);color:#fff;border-radius:18px;padding:26px 28px;margin-bottom:14px}
+.inc-hero h3{font-size:22px;letter-spacing:-.015em;margin-bottom:6px}
+.inc-hero p{color:rgba(255,255,255,.88);font-size:16.5px;max-width:38em}
+.btn.light{flex:none;background:#fff;color:var(--tint);white-space:nowrap}
+.inc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.inc{background:var(--grouped);border-radius:16px;padding:20px 20px 10px}
+.inc h3{font-size:16.5px;line-height:1.25;margin-bottom:6px}
+.inc p{color:var(--muted);font-size:15px}
 .fees{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .fee{background:var(--grouped);border-radius:16px;padding:20px 22px 10px}
 .fee-to{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#3B3B42;background:rgba(0,0,0,.07);border-radius:99px;padding:4px 10px;margin-bottom:12px}
@@ -71,5 +88,7 @@ import "../../styles/marketing.css";
 .calc td:last-child{text-align:right;white-space:nowrap}
 .calc tr.total td{color:var(--text);font-weight:700;border-bottom:1px solid var(--line)}
 .calc-note{color:var(--muted);font-size:15px;margin:0 0 18px}
+@media(max-width:1000px){.inc-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:860px){.fees{grid-template-columns:1fr}}
+@media(max-width:640px){.inc-hero{flex-direction:column;align-items:flex-start}.inc-grid{grid-template-columns:1fr}}
 </style>
