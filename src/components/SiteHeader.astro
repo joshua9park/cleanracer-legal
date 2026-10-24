@@ -1,0 +1,14 @@
+---
+// The header every page shares: the Clean Racer logo on the left and one link on the right.
+// The link is "Support" on every page except the two front doors: the cleaners page offers "For Customers", the customers page offers "For Cleaners".
+interface Props { to?: "support" | "customers" | "cleaners"; dark?: boolean; narrow?: boolean }
+const { to = "support", dark = false, narrow = false } = Astro.props;
+const links = { support: { href: "/support/", text: "Support" }, customers: { href: "/customers/", text: "For Customers" }, cleaners: { href: "/", text: "For Cleaners" } };
+const link = links[to];
+---
+<header class:list={["sx-bar", { dark, narrow }]}>
+  <div class="in">
+    <a class="sx-brand" href="/"><img src={dark ? "/assets/email-logo-white.png" : "/assets/email-logo.png"} alt="Clean Racer" width="148" height="32"></a>
+    <a class="sx-link" href={link.href}>{link.text}</a>
+  </div>
+</header>

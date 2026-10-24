@@ -1,0 +1,32 @@
+/* The parts every page shares: the colour tokens, the header and the footer. Edit them here and every page follows. */
+:root{color-scheme:light;
+  --bg:#FFFFFF;--grouped:#F2F2F7;--card:#FFFFFF;--text:#000000;--muted:#5C5C61;--faint:#8E8E93;--line:#C6C6C8;
+  --tint:#0A60D6;--tint-soft:rgba(10,96,214,.12)}
+
+/* header: the logo on the left, one link on the right */
+.sx-bar{background:var(--bg);border-bottom:.5px solid var(--line)}
+.sx-bar .in{max-width:1040px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+.sx-bar.narrow .in{max-width:760px}
+.sx-brand{display:block;line-height:0}
+.sx-brand img{height:32px;width:auto;display:block}
+.sx-link{font-size:15px;font-weight:500;text-decoration:none;color:var(--muted)}
+.sx-link:hover{color:var(--text)}
+/* on a dark page the header sits on the page itself */
+.sx-bar.dark{background:transparent;border-bottom:0}
+.sx-bar.dark .sx-link{color:rgba(255,255,255,.78)}
+.sx-bar.dark .sx-link:hover{color:#fff}
+
+/* footer */
+.sx-foot{border-top:.5px solid var(--line);color:var(--faint);font-size:14px;line-height:1.6}
+.sx-foot .in{max-width:1040px;margin:0 auto;padding:30px 20px 50px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.sx-foot.narrow .in{max-width:760px}
+.sx-foot address{font-style:normal}
+.sx-foot address b{color:var(--muted);font-weight:600}
+.sx-foot a{color:var(--faint);margin-right:14px;text-decoration:none}
+.sx-foot a:hover{color:var(--text)}
+.sx-foot .links a:last-child{margin-right:0}
+.sx-foot.dark{border-top:1px solid #2C2C2E;color:#7C7C82}
+.sx-foot.dark address b{color:#B4B4BA}
+.sx-foot.dark a{color:#8E8E93}
+.sx-foot.dark a:hover{color:#fff}
+@media print{.sx-bar{display:none}}

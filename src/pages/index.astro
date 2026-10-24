@@ -1,43 +1,18 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CR Business · Pickup and delivery. No hardware, no POS.</title>
-<meta name="description" content="Add pickup and delivery to your dry cleaning business with just your phone: no POS to replace, no hardware to buy. One shared list, intake at the counter, payments recorded. Starter, Growth and Fleet plans.">
-<meta name="theme-color" content="#FFFFFF">
-<meta property="og:title" content="CR Business · Pickup and delivery. No hardware, no POS.">
-<meta property="og:description" content="The app for dry cleaners: pickups, intake and deliveries on one shared list.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://cleanracer.com/">
-<link rel="canonical" href="https://cleanracer.com/">
-<meta property="og:site_name" content="Clean Racer">
-<meta property="og:image" content="https://cleanracer.com/assets/og-biz.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The Clean Racer Business app on a phone, showing today at a glance.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="CR Business · Pickup and delivery. No hardware, no POS.">
-<meta name="twitter:description" content="Add pickup and delivery to your dry cleaning business with just your phone. No POS to replace, no hardware to buy.">
-<meta name="twitter:image" content="https://cleanracer.com/assets/og-biz.png">
-<link rel="icon" href="/assets/favicon.png">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Clean Racer","legalName":"MOTHER PARKERSON LLC","url":"https://cleanracer.com/","logo":"https://cleanracer.com/assets/cleanracer-icon.png","email":"support@cleanracer.com"}</script>
-<style>
-/* The same tokens as the apps and the other pages: white, system type, light grey sections, one blue. */
+---
+import Base from "../layouts/Base.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+const ld = "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Clean Racer\",\"legalName\":\"MOTHER PARKERSON LLC\",\"url\":\"https://cleanracer.com/\",\"logo\":\"https://cleanracer.com/assets/cleanracer-icon.png\",\"email\":\"support@cleanracer.com\"}";
+---
+<Base title="CR Business \u00b7 Pickup and delivery. No hardware, no POS." description="Add pickup and delivery to your dry cleaning business with just your phone: no POS to replace, no hardware to buy. One shared list, intake at the counter, payments recorded. Starter, Growth and Fleet plans." canonical="https://cleanracer.com/" image="biz" jsonLd={ld}>
+<Fragment slot="head">
+<style is:global>
 :root{color-scheme:light;--bg:#FFFFFF;--grouped:#F2F2F7;--text:#000000;--muted:#5C5C61;--faint:#8E8E93;--line:#C6C6C8;--tint:#0A60D6;--tint-soft:rgba(10,96,214,.10)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font:17px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:var(--tint)}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-.topbar{border-bottom:.5px solid var(--line)}
-nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:700;font-size:18px;letter-spacing:-.01em}
-.brand img{width:30px;height:30px;border-radius:7px;display:block}
-nav ul{display:flex;gap:22px;list-style:none}
-nav ul a{font-size:15px;text-decoration:none;color:var(--muted)}
-nav ul a:hover{color:var(--text)}
 .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:56px 0 72px}
 .eyebrow{display:block;color:var(--tint);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
 h1{font-size:44px;line-height:1.1;letter-spacing:-.025em;font-weight:700;margin:10px 0 18px}
@@ -99,22 +74,16 @@ figcaption span{color:var(--muted);font-size:15px}
 section.final{text-align:center;border-top:.5px solid var(--line)}
 section.final p{color:var(--muted);max-width:34em;margin:8px auto 22px}
 section.final .cta{justify-content:center;margin:0}
-footer{padding:30px 0 50px;color:var(--faint);font-size:14px;line-height:1.6;border-top:.5px solid var(--line)}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-footer a{color:var(--faint);margin-right:14px;text-decoration:none}
-footer a:hover{color:var(--text)}
-@media(max-width:860px){.hero{grid-template-columns:1fr;gap:36px;padding:32px 0 56px}.phone-wrap{order:2}h1{font-size:36px}.grid,.plans,.apps{grid-template-columns:1fr}.rail-nav{display:none}section{padding:52px 0}}
+@media(max-width:860px){.hero{grid-template-columns:1fr;gap:36px;padding:32px 0 56px}
+.phone-wrap{order:2}
+h1{font-size:36px}
+.grid,.plans,.apps{grid-template-columns:1fr}
+.rail-nav{display:none}
+section{padding:52px 0}}
 </style>
-</head>
-<body>
-<div class="topbar"><div class="wrap">
-  <nav aria-label="Main">
-    <a class="brand" href="/"><img src="/assets/cleanracer-business-icon.png" alt="">Clean Racer - Business</a>
-    <ul>
-      <li><a href="/customers/">For customers</a></li>
-    </ul>
-  </nav>
-</div></div>
+</Fragment>
+
+<SiteHeader to="customers" />
 <div class="wrap">
   <header class="hero">
     <div>
@@ -184,15 +153,11 @@ footer a:hover{color:var(--text)}
   <div class="cta"><a class="btn primary" href="mailto:application@cleanracer.com?subject=I%27d%20like%20to%20join%20Clean%20Racer">Get in touch</a></div>
 </div></section>
 
-<footer><div class="wrap">
-  <address style="font-style:normal;line-height:1.6">© 2026 <b style="color:var(--muted);font-weight:600">MOTHER PARKERSON LLC</b>, doing business as Clean Racer<br>603 Mininger Road, Souderton, PA 18954, USA</address>
-  <span><a href="/support/">Support</a><a href="/terms/">Terms of Use</a><a href="/privacy/">Privacy Policy</a><a href="mailto:support@cleanracer.com">support@cleanracer.com</a></span>
-</div></footer>
-<script>
+<SiteFooter />
+<script is:inline>
 (function(){var r=document.getElementById("rail");if(!r)return;var step=function(){return Math.round(r.clientWidth*0.8)};
 document.getElementById("rail-prev").onclick=function(){r.scrollBy({left:-step(),behavior:"smooth"})};
 document.getElementById("rail-next").onclick=function(){r.scrollBy({left:step(),behavior:"smooth"})};
 r.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){r.scrollBy({left:step(),behavior:"smooth"})}else if(e.key==="ArrowLeft"){r.scrollBy({left:-step(),behavior:"smooth"})}});})();
 </script>
-</body>
-</html>
+</Base>
