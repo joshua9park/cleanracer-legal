@@ -1,0 +1,17 @@
+---
+// The "get the app" row: Google's official "Get it on Google Play" badge (unmodified, linked to the app's listing) and a placeholder for the App Store, which stays
+// "Coming soon" until the app is live there. The badge image has clear space built in, so it is pulled in with negative margins to line up with the other box.
+interface Props { play: string; app: string }
+const { play, app } = Astro.props;
+---
+<div class="sb">
+  <a class="sb-play" href={play} target="_blank" rel="noopener" aria-label={`Get ${app} on Google Play`}><img src="/assets/google-play-badge.png" alt="Get it on Google Play" width="186" height="72"></a>
+  <span class="sb-soon" role="note"><span><b>Coming soon</b> to the App Store</span></span>
+</div>
+<style>
+.sb{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:26px 0 0}
+.sb-play{display:inline-block;line-height:0}
+.sb-play img{display:block;height:72px;width:auto;margin:-12px -12px -12px -12px}
+.sb-soon{display:inline-flex;align-items:center;height:48px;padding:0 18px;border-radius:12px;background:var(--grouped,#F2F2F7);color:var(--muted,#5C5C61);font-size:16px;font-weight:500;line-height:1.2}
+.sb-soon b{color:var(--text,#000)}
+</style>
