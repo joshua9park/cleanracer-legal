@@ -16,6 +16,7 @@ h1 em{font-style:normal;color:var(--muted)}
 .btn.plain{color:var(--tint);padding:11px 6px}
 .cta .btn.plain:first-child{padding-left:0}   /* a plain link on its own lines up with the text above it */
 .sb+.cta{margin-top:14px}
+.sb+.note{margin-top:22px}
 .note{color:var(--faint);font-size:15px}
 .note b{color:var(--muted);font-weight:600}
 .phone-wrap{display:flex;justify-content:center}
