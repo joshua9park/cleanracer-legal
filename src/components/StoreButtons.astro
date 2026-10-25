@@ -14,4 +14,12 @@ const { play, app } = Astro.props;
 .sb-play img{display:block;height:72px;width:auto;margin:-12px -12px -12px -12px}
 .sb-soon{display:inline-flex;align-items:center;height:48px;padding:0 18px;border-radius:12px;background:var(--grouped,#F2F2F7);color:var(--muted,#5C5C61);font-size:16px;font-weight:500;line-height:1.2}
 .sb-soon b{color:var(--text,#000)}
+/* on a phone the two stay in one row: a smaller badge, and the box says its two lines under each other */
+@media(max-width:520px){
+  .sb{flex-wrap:nowrap;gap:10px}
+  .sb-play img{height:60px;margin:-10px -10px -10px -10px}
+  .sb-soon{height:40px;padding:0 14px;font-size:13px;line-height:1.2}
+  .sb-soon span{display:block}
+  .sb-soon b{display:block}
+}
 </style>
