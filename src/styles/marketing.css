@@ -14,6 +14,7 @@ h1 em{font-style:normal;color:var(--muted)}
 .btn{display:inline-block;padding:11px 20px;border-radius:12px;font-weight:600;font-size:16px;text-decoration:none}
 .btn.primary{background:var(--tint);color:#fff}
 .btn.plain{color:var(--tint);padding:11px 6px}
+.cta .btn.plain:first-child{padding-left:0}   /* a plain link on its own lines up with the text above it */
 .sb+.cta{margin-top:14px}
 .note{color:var(--faint);font-size:15px}
 .note b{color:var(--muted);font-weight:600}
