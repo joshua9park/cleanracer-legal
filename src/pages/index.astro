@@ -7,21 +7,30 @@ import PlanCards from "../components/PlanCards.astro";
 import "../styles/marketing.css";
 const ld = "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Clean Racer\",\"legalName\":\"MOTHER PARKERSON LLC\",\"url\":\"https://cleanracer.com/\",\"logo\":\"https://cleanracer.com/assets/cleanracer-icon.png\",\"email\":\"support@cleanracer.com\"}";
 ---
-<Base title="CR Business \u00b7 Pickup and delivery. No hardware, no POS." description="Add pickup and delivery to your dry cleaning business with just your phone: no POS to replace, no hardware to buy. One shared list, intake at the counter, payments recorded. Starter, Growth and Fleet plans." canonical="https://cleanracer.com/" image="biz" jsonLd={ld}>
+<Base title="CR Business \u00b7 Your customers. Your delivery." description="Add pickup and delivery to the dry cleaner you already run, with just your phone. Your customers book with you, not a directory of cleaners. No POS to replace, no hardware to buy. Starter, Growth and Fleet plans." canonical="https://cleanracer.com/" image="biz" jsonLd={ld}>
 
 <SiteHeader to="customers" />
 <div class="wrap">
   <header class="hero">
     <div>
       <span class="eyebrow">For dry cleaners · CR Business</span>
-      <h1>Pickup and delivery. <em>No hardware, no POS.</em></h1>
-      <p class="lede">Add pickup and delivery to your dry cleaning business with just your phone. Your customers book pickups in the Clean Racer app. You confirm, your driver makes the trip, and customers can pay right in the app. The money goes straight to you.</p>
+      <h1>Your customers. <em>Your delivery.</em></h1>
+      <p class="lede">Add pickup and delivery to the cleaner you already run, with just your phone. Your customers book pickups in the Clean Racer app, you confirm, your driver makes the trip, and customers can pay right in the app. The money goes straight to you. No hardware, no POS, nothing to replace.</p>
       <StoreButtons play="https://play.google.com/store/apps/details?id=com.cleanracer.business" app="CR Business" />
       <p class="note">Two apps, one account: <b>CR Business</b> for your team, <b>Clean Racer</b> for your customers.</p>
     </div>
     <div class="phone-wrap"><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-home.webp" width="620" height="1347" alt="The CR Business app's Home screen: new pickup requests to confirm, and an overview of the day."></div></div></div>
   </header>
 </div>
+
+<section id="your-customers"><div class="wrap">
+  <div class="sec-head"><span class="tag">Your customers</span><h2>Bring your own customers. We handle the rest.</h2><p>Clean Racer isn't a marketplace. We don't list your store next to other cleaners, and we don't send you strangers. Your customers book with you.</p></div>
+  <div class="steps3">
+    <div class="step3"><h3>Share your QR code</h3><p>Your store has its own QR code and store code. Put the code on your counter or your window, or send the link by text or email.</p></div>
+    <div class="step3"><h3>Customers scan and book</h3><p>They scan it with their phone's camera, link with your store in the free Clean Racer app, and pick a pickup window.</p></div>
+    <div class="step3"><h3>Requests roll in</h3><p>You confirm, your driver makes the trip, and the order comes back to the customer's door. Everything stays between you and them.</p></div>
+  </div>
+</div></section>
 
 <section id="features" class="gray"><div class="wrap">
   <div class="sec-head"><span class="tag">CR Business</span><h2>Everything your team needs, nothing it doesn't.</h2><p>Built for the owner, the manager and the driver, on one shared list.</p></div>
