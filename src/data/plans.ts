@@ -4,8 +4,8 @@ export type Plan = { name: string; price: string; stops: string; drivers: string
 
 export const plans: Plan[] = [
   { name: "Starter", price: "$19.99", stops: "150 stops a month", drivers: "1 driver", driverCount: "1", stopCount: "150", cycles: "About 75" },
-  { name: "Growth", price: "$39.99", stops: "500 stops a month", drivers: "Up to 5 drivers", featured: true, driverCount: "Up to 5", stopCount: "500", cycles: "About 250" },
-  { name: "Fleet", price: "$129.99", stops: "10,000 stops a month", drivers: "Up to 25 drivers", driverCount: "Up to 25", stopCount: "10,000", cycles: "About 5,000" },
+  { name: "Growth", price: "$39.99", stops: "750 stops a month", drivers: "Up to 5 drivers", featured: true, driverCount: "Up to 5", stopCount: "750", cycles: "About 375" },
+  { name: "Fleet", price: "$129.99", stops: "3,000 stops a month", drivers: "Up to 15 drivers", driverCount: "Up to 15", stopCount: "3,000", cycles: "About 1,500" },
 ];
 
 // Answers are trusted HTML written here (not user input).
