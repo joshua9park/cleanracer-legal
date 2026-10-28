@@ -11,7 +11,7 @@ export const menu: MenuGroup[] = [
     { label: "About Us", href: "/about/" },
   ] },
   { heading: "Guides", links: [
-    { label: "Get Started with CR Business", href: "/guides/get-started/" },
+    { label: "Get Started with Clean Racer Business", href: "/guides/get-started/" },
     { label: "Running Your Orders", href: "/guides/running-orders/" },
   ] },
   { heading: "Help and legal", links: [

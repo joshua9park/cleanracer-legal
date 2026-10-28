@@ -6,20 +6,20 @@ import "../../styles/marketing.css";
 
 // Getting started: the four steps from application to a first customer. Every day: one row each, in the order a day runs, with an app screenshot beside it.
 const start = [
-  { title: "Apply in the app", text: "Download CR Business and tell us about your store: its name, address and hours, and a photo of your business license." },
+  { title: "Apply in the app", text: "Download Clean Racer Business and tell us about your store: its name, address and hours, and a photo of your business license." },
   { title: "We check it's you", text: "We verify your license and call the number on your Google listing. It usually takes one to two business days." },
   { title: "Subscribe and open your store", text: "Pick a plan through the App Store or Google Play. Your store opens the moment the purchase is confirmed, and setup takes about 20 minutes." },
   { title: "Invite your customers", text: "Share your QR code or link. Customers join your store in the Clean Racer app and request pickups." },
 ];
 const daily = [
-  { title: "Confirm the requests", text: "New pickup requests land on your Home screen with the day and time your customer asked for. Tap Confirm, or Decline. Your customer is told either way. Below them, a quick overview: pickups and deliveries today, what's in the shop, and what you're owed.", img: "business-home", alt: "The CR Business app's Home screen: new pickup requests to confirm, and an overview of pickups, deliveries, orders in the shop and money owed." },
+  { title: "Confirm the requests", text: "New pickup requests land on your Home screen with the day and time your customer asked for. Tap Confirm, or Decline. Your customer is told either way. Below them, a quick overview: pickups and deliveries today, what's in the shop, and what you're owed.", img: "business-home", alt: "The Clean Racer Business app's Home screen: new pickup requests to confirm, and an overview of pickups, deliveries, orders in the shop and money owed." },
   { title: "See your whole day", text: "Today lists every pickup and delivery in one place, with the time window beside each. Your whole team sees the same list, so there's nothing to assign. Whoever starts a stop claims it.", img: "business-today", alt: "The Today screen: the day's pickups with their time windows, and orders in the shop." },
   { title: "Know your route", text: "Open the map to see the day's stops, numbered, with each customer's address and window underneath. One tap on On my way lets all of those customers know you're headed out.", img: "business-map", alt: "The route map: five numbered pickups with addresses and time windows, and an On my way button." },
-  { title: "Two taps a stop", text: "At each stop you see the address and your customer's note, with Navigate, Call and Message right there. Tap On my way and your customer gets a heads-up, then Picked up, or Delivered. That's the whole job.", img: "business-stop", alt: "A pickup stop in CR Business: the address, the customer's note, Navigate, Call and Message, and one big On my way button." },
+  { title: "Two taps a stop", text: "At each stop you see the address and your customer's note, with Navigate, Call and Message right there. Tap On my way and your customer gets a heads-up, then Picked up, or Delivered. That's the whole job.", img: "business-stop", alt: "A pickup stop in Clean Racer Business: the address, the customer's note, Navigate, Call and Message, and one big On my way button." },
   { title: "Count it in at the counter", text: "When the order reaches your shop, tap Count items. Tag it with your own ticket number if you like, tally shirts, pants and the rest with a plus and a minus, and tap Start cleaning. Your customer can follow along.", img: "business-intake", alt: "The intake screen: an optional ticket number and a tally of garments by type, with a Start cleaning button." },
   { title: "Deliver the order", text: "Deliveries show what's due and any note from your customer, like \"leave with the doorman.\" Navigate, Call and Message are right there. Tap On my way, then Delivered.", img: "business-collect", alt: "A delivery stop: the address, the amount to collect, the customer's note, Navigate, Call and Message, and an On my way button." },
   { title: "Record the payment, add a photo", text: "If there's a balance, the app asks, \"Did you collect payment?\" before it lets you finish, so every payment ends up recorded. Customers who paid in the app are already marked paid. A photo of the order at the door is optional, and one more way to show it arrived.", img: "business-photo", alt: "Finishing a delivery: the question Did you collect payment? with Yes and No, and a photo of the garments at the door." },
-  { title: "Get paid your way", text: "Cash, card at the door, or card in the app, straight into your own Stripe account. Connect your Stripe account in the app to take cards, and set the small convenience fee your customers pay for using them, anywhere from $0 to $3. It's yours to keep. Every payment is recorded.", img: "business-cards", alt: "Card Payments in CR Business: card payments are on, with the store's Stripe account and convenience fee." },
+  { title: "Get paid your way", text: "Cash, card at the door, or card in the app, straight into your own Stripe account. Connect your Stripe account in the app to take cards, and set the small convenience fee your customers pay for using them, anywhere from $0 to $3. It's yours to keep. Every payment is recorded.", img: "business-cards", alt: "Card Payments in Clean Racer Business: card payments are on, with the store's Stripe account and convenience fee." },
 ];
 const promise = [
   { title: "No hardware, no POS to replace", text: "It runs on the phones you already have." },
@@ -27,7 +27,7 @@ const promise = [
   { title: "Your money stays yours", text: "Card payments go straight to your own Stripe account. We never hold it." },
 ];
 ---
-<Base title="How It Works · CR Business" description="From your application to your first pickup, then two taps a stop. How CR Business works for dry cleaners." canonical="https://cleanracer.com/how-it-works/" image="biz">
+<Base title="How It Works · Clean Racer Business" description="From your application to your first pickup, then two taps a stop. How Clean Racer Business works for dry cleaners." canonical="https://cleanracer.com/how-it-works/" image="biz">
 <SiteHeader />
 
 <section style="padding:56px 0 40px"><div class="wrap">
@@ -44,7 +44,7 @@ const promise = [
 </div></section>
 
 <section><div class="wrap">
-  <div class="sec-head"><span class="tag">Every day</span><h2>Then it runs on two taps.</h2><p>Here is a day in CR Business, from the first request to the last payment.</p></div>
+  <div class="sec-head"><span class="tag">Every day</span><h2>Then it runs on two taps.</h2><p>Here is a day in Clean Racer Business, from the first request to the last payment.</p></div>
   {daily.map((d) => (
     <div class="hiw-row">
       <div class="hiw-text"><h3>{d.title}</h3><p>{d.text}</p></div>
@@ -62,7 +62,7 @@ const promise = [
 
 <section class="final"><div class="wrap">
   <h2>Ready to run it your way?</h2>
-  <p>CR Business is on Google Play now and coming soon to the App Store. Write to us and we'll walk you through applying.</p>
+  <p>Clean Racer Business is on Google Play now and coming soon to the App Store. Write to us and we'll walk you through applying.</p>
   <div class="cta"><a class="btn primary" href="mailto:application@cleanracer.com?subject=I%27d%20like%20to%20join%20Clean%20Racer">Get in touch</a><a class="btn plain" href="/pricing/">See pricing →</a></div>
 </div></section>
 
