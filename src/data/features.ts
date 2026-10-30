@@ -13,5 +13,6 @@ export const features: { title: string; text: string }[] = [
   { title: "Photos at handoff", text: "A photo at pickup and at drop-off, so everyone knows it arrived." },
   { title: "Weekly pickups", text: "Set a repeating day and time once, with your own pickup windows and service area." },
   { title: "Owners, managers and drivers", text: "Everyone gets the access they need." },
+  { title: "Rewards for your regulars", text: "Customers earn points and use them for money off when they pay in the app. Optional, free on every plan, and you set the rate." },
   { title: "Every payment recorded", text: "Cash, card at delivery or in the app, plus the unpaid list." },
 ];
