@@ -1,0 +1,133 @@
+---
+import Base from "../../layouts/Base.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import "../../styles/marketing.css";
+
+// For a dry cleaner comparing ways to offer delivery. The verdict first (a scoreboard readable in seconds), the proof below it.
+// Prices and features were checked on Oct 31, 2026 (Starchup and CleanCloud pricing pages); re-check them before changing a number here.
+const rows = [
+  { q: "Your customers stay yours", v: ["no", "yes", "yes", "yes"] },
+  { q: "You set the price", v: ["no", "yes", "yes", "yes"] },
+  { q: "Customers pay you", v: ["no", "yes", "yes", "yes"] },
+  { q: "Month to month", v: ["na", "no:Annual for the best price", "yes", "yes"] },
+  { q: "No onboarding fee", v: ["na", "na", "no:Onboarding plan on top", "yes"] },
+];
+const cost = ["A wholesale rate", "$399", "$109", "from $19.99"];
+const cols = [{ n: "Delivery apps", s: "Rinse, Dryv, Hamperapp" }, { n: "Starchup", s: "" }, { n: "CleanCloud", s: "" }, { n: "Clean Racer", s: "" }];
+---
+<Base title="Dry Cleaner Delivery Without the Middleman · Clean Racer Business" description="Delivery apps keep your customers. Delivery software costs $109 to $399 a month. Clean Racer puts your store's name on every order, from $19.99 a month." canonical="https://cleanracer.com/dry-cleaner-delivery-without-the-middleman/" image="biz">
+<SiteHeader />
+
+<section class="cp-hero"><div class="wrap">
+  <h1>Keep your customers.<br><span class="cp-blue">Skip the middleman.</span></h1>
+  <p class="lede">Your store's name on every order. Customers book you, not from a list.</p>
+
+  <div class="sb">
+    <div class="sb-head">
+      <span></span>
+      {cols.map((c, i) => <span class={i === 3 ? "us" : ""}><b>{c.n}</b>{c.s && <i>{c.s}</i>}</span>)}
+    </div>
+    {rows.map((r) => (
+      <div class="sb-row">
+        <span class="q">{r.q}</span>
+        {r.v.map((v, i) => {
+          const [k, note] = v.split(":");
+          return <span class={"c " + k + (i === 3 ? " us" : "")}>{k === "yes" ? "✓" : k === "no" ? "✕" : "–"}{note && <i>{note}</i>}</span>;
+        })}
+      </div>
+    ))}
+    <div class="sb-row sb-cost">
+      <span class="q">Monthly cost</span>
+      {cost.map((c, i) => <span class={"c cost" + (i === 3 ? " us" : "")}>{c}</span>)}
+    </div>
+  </div>
+  <div class="cta"><a class="btn primary" href="mailto:application@cleanracer.com?subject=I%27d%20like%20to%20join%20Clean%20Racer">Get in touch</a><a class="btn plain" href="#why">Why we say that ↓</a></div>
+</div></section>
+
+<section class="gray" id="why"><div class="wrap">
+  <div class="sec-head"><span class="tag">The proof</span><h2>Why we say that.</h2></div>
+  <div class="why-grid">
+    <div class="why"><p class="why-k">They own the customer.</p><blockquote>"Cleaners don't interact with customers."</blockquote><p class="why-s">Rinse's CEO, in a U.S. Chamber of Commerce profile. "We manage customer acquisition," he adds.</p></div>
+    <div class="why"><p class="why-k">You're paid wholesale.</p><blockquote>"Wholesale services, cleaning large volumes of garments at a lower cost."</blockquote><p class="why-s">What apps like Cleanly and FlyCleaners asked of cleaners, reported by The Outline. They run no plants of their own.</p></div>
+    <div class="why"><p class="why-k">Software costs real money.</p><blockquote>$399 and $109 a month.</blockquote><p class="why-s">Starchup's Delivery plan, month to month ($349 billed annually), and CleanCloud's Pro, its first plan with delivery. Published prices.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="cp-phones">
+    <figure class="cp-col">
+      <div class="cp-mock"><div class="cp-screen">
+        <div class="cp-bar">Cleaners near you</div>
+        <div class="cp-row"><i></i><b></b></div>
+        <div class="cp-row"><i></i><b></b></div>
+        <div class="cp-row cp-you"><i></i><b>Your store</b><em>#3</em></div>
+        <div class="cp-row"><i></i><b></b></div>
+        <div class="cp-row"><i></i><b></b></div>
+      </div></div>
+      <figcaption>On a delivery app, you're one of the list.</figcaption>
+    </figure>
+    <figure class="cp-col cp-us">
+      <div class="phone real"><div class="screen"><img src="/assets/shots/customer-home.webp" width="620" height="1347" alt="The Clean Racer customer app: one cleaner, Sunrise Cleaners, with the customer's order and a Pickup button." loading="lazy"></div></div>
+      <figcaption>On Clean Racer, your store is the one they see.</figcaption>
+    </figure>
+  </div>
+  <p class="cp-foot">Apps can bring you new customers, and Rinse says its dry cleaning partners see about 10% more revenue in year one. Clean Racer focuses on one thing: pickup and delivery under your store's name. Bigger platforms bundle extras. App rates are not public and vary. Prices and features checked Oct 31, 2026. Sources: U.S. Chamber of Commerce; Rinse's partner page and Dryv announcement (Nov. 2020); The Outline; TechCrunch; Starchup and CleanCloud pricing pages.</p>
+</div></section>
+
+<section class="final"><div class="wrap">
+  <h2>From $19.99 a month.</h2>
+  <p>No cut of your sales. Cancel any time. Clean Racer Business is on Google Play now and coming soon to the App Store.</p>
+  <div class="cta"><a class="btn primary" href="mailto:application@cleanracer.com?subject=I%27d%20like%20to%20join%20Clean%20Racer">Get in touch</a><a class="btn plain" href="/pricing/">See pricing →</a></div>
+</div></section>
+
+<SiteFooter />
+</Base>
+
+<style is:global>
+.cp-hero{padding:56px 0 48px}
+.cp-hero h1{font-size:clamp(42px,7.4vw,84px);line-height:1;letter-spacing:-.04em;font-weight:800;margin:0 0 18px}
+.cp-blue{color:var(--tint)}
+.cp-hero .lede{font-size:clamp(18px,2.3vw,24px);color:var(--muted);margin:0 0 32px;max-width:30em}
+.sb{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.sb-head,.sb-row{display:grid;grid-template-columns:1.5fr repeat(4,1fr);align-items:stretch}
+.sb-head span{padding:18px 12px;text-align:center;border-bottom:1px solid var(--line);background:var(--grouped);display:flex;flex-direction:column;justify-content:center}
+.sb-head b{display:block;font-size:16px}
+.sb-head i{display:block;font-style:normal;font-size:12px;color:var(--faint);margin-top:2px}
+.sb-head .us{background:var(--tint);color:#fff}
+.sb-row{border-top:.5px solid var(--line)}
+.sb-row:first-of-type{border-top:0}
+.sb-row .q{padding:18px 16px;font-weight:700;font-size:18px;display:flex;align-items:center}
+.sb-row .c{padding:14px 8px;text-align:center;font-size:28px;font-weight:800;line-height:1.1;display:flex;flex-direction:column;justify-content:center}
+.sb-row .c i{display:block;font-style:normal;font-size:11px;font-weight:500;color:var(--faint);margin-top:4px}
+.c.yes{color:#1B9E4B}
+.c.no{color:#D92D20}
+.c.na{color:var(--faint)}
+.c.cost{font-size:20px;color:var(--muted)}
+.c.us{background:var(--tint-soft)}
+.c.cost.us{color:var(--tint);font-size:22px}
+.sb-cost{background:var(--grouped)}
+.sb-cost .c.us{background:var(--tint-soft)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.why{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.why-k{color:var(--tint);font-weight:800;font-size:13px;letter-spacing:.05em;text-transform:uppercase;margin:0 0 10px}
+.why blockquote{margin:0 0 12px;font-size:21px;line-height:1.25;font-weight:700}
+.why-s{color:var(--muted);font-size:15px;margin:0}
+.cp-phones{display:flex;gap:56px;justify-content:center;align-items:flex-end;margin:0 0 32px}
+.cp-col{margin:0;text-align:center}
+.cp-col figcaption{margin:16px auto 0;font-size:15px;font-weight:600;color:var(--muted);max-width:270px}
+.cp-us figcaption{color:var(--tint)}
+.cp-mock{width:290px;border-radius:44px;border:1px solid var(--line);background:#fff;padding:8px;box-shadow:0 18px 40px -24px rgba(0,0,0,.3)}
+.cp-screen{border-radius:36px;background:var(--grouped);height:520px;padding:18px 14px;overflow:hidden}
+.cp-bar{font-size:15px;font-weight:700;text-align:left;padding:28px 6px 12px}
+.cp-row{display:flex;align-items:center;gap:12px;background:#fff;border-radius:14px;padding:12px;margin-bottom:10px;height:62px}
+.cp-row i{flex:none;width:38px;height:38px;border-radius:10px;background:#E3E5EA}
+.cp-row b{flex:1;height:10px;border-radius:5px;background:#E3E5EA;font-size:0}
+.cp-you{outline:2px solid var(--tint)}
+.cp-you i{background:var(--tint)}
+.cp-you b{height:auto;background:none;font-size:14px;font-weight:700;color:var(--text);text-align:left}
+.cp-you em{font-style:normal;font-size:12px;font-weight:700;color:var(--tint)}
+.cp-col .phone{margin:0}
+.cp-foot{color:var(--faint);font-size:13px;max-width:56em;margin:8px auto 0}
+@media(max-width:860px){.sb-head,.sb-row{grid-template-columns:1.2fr repeat(4,.8fr)}.sb-row .q{font-size:14px;padding:14px 10px}.sb-head span{padding:12px 4px}.sb-head b{font-size:12px}.sb-head i{display:none}.sb-row .c{font-size:22px}.c.cost{font-size:13px!important}.sb-row .c i{display:none}.why-grid{grid-template-columns:1fr}.cp-phones{flex-direction:column;align-items:center;gap:36px}.cp-screen{height:480px}}
+</style>

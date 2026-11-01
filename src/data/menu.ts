@@ -8,6 +8,7 @@ export const menu: MenuGroup[] = [
     { label: "For Customers", href: "/customers/" },
     { label: "How It Works", href: "/how-it-works/" },
     { label: "Pricing", href: "/pricing/" },
+    { label: "How We Compare", href: "/dry-cleaner-delivery-without-the-middleman/" },
     { label: "About Us", href: "/about/" },
   ] },
   { heading: "Guides", links: [
