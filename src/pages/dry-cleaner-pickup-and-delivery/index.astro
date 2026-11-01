@@ -1,0 +1,110 @@
+---
+import Base from "../../layouts/Base.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import "../../styles/marketing.css";
+
+// For a dry cleaner deciding whether to offer pickup and delivery. A point of view first (keep your regulars yours), then the proof. Facts match How It Works and Pricing.
+const promise = [
+  { title: "No new POS", text: "Your counter stays exactly as it is." },
+  { title: "No hardware", text: "Your drivers use the phones they already have." },
+  { title: "No cut of your sales", text: "A flat monthly plan. Not a percentage of your orders." },
+];
+---
+<Base title="Add Pickup and Delivery to Your Dry Cleaner, Keep Your Customers · Clean Racer Business" description="Offer pickup and delivery under your own name, without handing your regulars to a delivery app. Clean Racer Business runs on the phones you already have. No POS to replace." canonical="https://cleanracer.com/dry-cleaner-pickup-and-delivery/" image="biz">
+<SiteHeader />
+
+<section style="padding:56px 0 48px"><div class="wrap">
+  <span class="eyebrow">Pickup and delivery for dry cleaners</span>
+  <h1>Your regulars want delivery. Keep them yours.</h1>
+  <p class="lede">Customers who can't get to your counter will find someone who comes to them. Clean Racer makes that someone you.</p>
+  <div class="cta"><a class="btn primary" href="mailto:application@cleanracer.com?subject=I%27d%20like%20to%20join%20Clean%20Racer">Get in touch</a><a class="btn plain" href="/pricing/">See pricing →</a></div>
+</div></section>
+
+<section class="gray"><div class="wrap">
+  <div class="pd-split">
+    <div>
+      <span class="tag">The problem</span>
+      <h2>You do the cleaning. Someone else gets the customer.</h2>
+    </div>
+    <div class="pd-body">
+      <p>Delivery apps put your store on a list, right next to the cleaner down the road. Your regulars learn to open the app instead of walking into your shop, and the relationship you built over the years belongs to somebody else.</p>
+      <p>Doing nothing isn't safe either. Someone is going to offer your customers the convenience you don't.</p>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="pd-split">
+    <div>
+      <span class="tag">The fix</span>
+      <h2>Delivery under your own name.</h2>
+    </div>
+    <div class="pd-body">
+      <p>With Clean Racer, the only cleaner your customers see is you. They scan your QR code, link to your store, and book a pickup. There's no list of other cleaners, no strangers sent your way, and no cut of your sales.</p>
+      <p>You decide the pickup windows, the service area and what gets confirmed. It's your service. We just make it easy to run.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="gray"><div class="wrap">
+  <div class="sec-head"><span class="tag">A Monday morning</span><h2>Easy enough that your driver doesn't need training.</h2></div>
+  <div class="pd-row">
+    <div class="pd-text"><h3>Requests land on your phone.</h3><p>New pickup requests are waiting, each with the day and window your customer asked for. Tap Confirm, or decline with a reason. Your customer is told either way.</p></div>
+    <div class="phone-wrap"><div class="phone real"><div class="screen"><img src="/assets/shots/business-home.webp" width="620" height="1347" alt="The Clean Racer Business app's Home screen: new pickup requests to confirm, and an overview of pickups, deliveries, orders in the shop and money owed." loading="lazy"></div></div></div>
+  </div>
+  <div class="pd-row pd-flip">
+    <div class="pd-text"><h3>Two taps a stop.</h3><p>Your driver taps On my way, and your customer gets a heads-up. Then Picked up. At the doorstep it's the same with Delivered. If there's a balance, the app asks whether the payment was collected, so nothing slips through.</p></div>
+    <div class="phone-wrap"><div class="phone real"><div class="screen"><img src="/assets/shots/business-stop.webp" width="620" height="1347" alt="A pickup stop in Clean Racer Business: the address, the customer's note, Navigate, Call and Message, and one big On my way button." loading="lazy"></div></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-head"><span class="tag">Nothing to rip out</span><h2>It fits the shop you already run.</h2></div>
+  <div class="pd-promise">
+    {promise.map((p) => <div><h3>{p.title}</h3><p>{p.text}</p></div>)}
+  </div>
+  <p class="pd-note">Card payments in the app are optional and go straight to your own Stripe account. We never touch your money. Customers can always pay the driver or the counter instead.</p>
+</div></section>
+
+<section class="gray"><div class="wrap">
+  <div class="pd-split">
+    <div>
+      <span class="tag">Low risk</span>
+      <h2>Start small.</h2>
+    </div>
+    <div class="pd-body">
+      <p>Starter is $19.99 a month. Keep one regular who would have drifted away and it pays for itself. There's no free trial to forget about and no contract. You can cancel any time in your App Store or Google Play subscription settings.</p>
+      <p>We review every store by hand before it goes live, so customers know the cleaner they're booking is real. <a href="/pricing/">See all three plans</a>, or read <a href="/dry-cleaning-delivery-software-cost/">what delivery software costs</a>.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="final"><div class="wrap">
+  <h2>Add delivery to the shop you already run.</h2>
+  <p>Clean Racer Business is on Google Play now and coming soon to the App Store. Write to us and we'll walk you through applying.</p>
+  <div class="cta"><a class="btn primary" href="mailto:application@cleanracer.com?subject=I%27d%20like%20to%20join%20Clean%20Racer">Get in touch</a><a class="btn plain" href="/how-it-works/">See how it works →</a></div>
+</div></section>
+
+<SiteFooter />
+</Base>
+
+<style is:global>
+.pd-split{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:start}
+.pd-split h2{font-size:32px;line-height:1.15;letter-spacing:-.02em;margin-top:6px}
+.pd-body p{font-size:19px;color:var(--muted);margin:0 0 16px}
+.pd-body a{color:var(--tint)}
+.pd-row{display:grid;grid-template-columns:1fr 320px;gap:56px;align-items:center;padding:26px 0}
+.pd-row+.pd-row{border-top:.5px solid var(--line)}
+.pd-flip{grid-template-columns:320px 1fr}
+.pd-flip .pd-text{order:2}
+.pd-text{max-width:30em}
+.pd-text h3{font-size:24px;letter-spacing:-.015em;margin:0 0 8px}
+.pd-text p{font-size:18px;color:var(--muted)}
+.pd-promise{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pd-promise>div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 22px 10px}
+.pd-promise h3{font-size:19px;line-height:1.25;margin:2px 0 6px}
+.pd-promise p{color:var(--muted);font-size:16px}
+.pd-note{margin-top:20px;color:var(--muted);font-size:16px;max-width:40em}
+@media(max-width:860px){.pd-split,.pd-row,.pd-flip{grid-template-columns:1fr;gap:22px}.pd-flip .pd-text{order:0}.pd-promise{grid-template-columns:1fr}.pd-split h2{font-size:28px}}
+</style>
