@@ -1,0 +1,99 @@
+---
+import Base from "../../layouts/Base.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import PlanTable from "../../components/PlanTable.astro";
+import "../../styles/marketing.css";
+
+// For an owner comparing what delivery software costs. Every number here is the same as the Pricing page; change them together.
+const wont = [
+  { title: "No setup fee", text: "Download the app, apply, and go live when you're approved." },
+  { title: "No cut of your sales", text: "A flat monthly plan, not a percentage of your orders." },
+  { title: "No charge per customer", text: "There is no limit on customers on any plan." },
+  { title: "No features held back", text: "Every plan has every feature. Plans differ only in drivers and stops." },
+];
+const ask = [
+  { title: "What does the monthly price leave out?", text: "Some tools charge extra for the pieces you need." },
+  { title: "What happens to the price as I grow?", text: "More drivers, more orders, more customers: find out which one moves the number." },
+  { title: "Do I have to replace anything I already use?", text: "A tool that fits your shop saves you the cost of switching." },
+];
+---
+<Base title="Dry Cleaning Delivery Software Pricing: What It Costs · Clean Racer Business" description="Delivery software that shows you the price. Clean Racer Business is $19.99, $39.99 or $129.99 a month, with every feature and unlimited customers on every plan. No setup fee, no cut of your sales." canonical="https://cleanracer.com/dry-cleaning-delivery-software-cost/" image="biz">
+<SiteHeader />
+
+<section style="padding:56px 0 40px"><div class="wrap">
+  <span class="eyebrow">Pricing</span>
+  <h1>Delivery software that tells you the price.</h1>
+  <p class="lede">Most delivery software makes you book a call to see a number. Here are ours.</p>
+</div></section>
+
+<section class="gray"><div class="wrap">
+  <PlanTable />
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-head"><span class="tag">What you won't pay</span><h2>The short list of things we don't charge for.</h2></div>
+  <div class="dc-grid4">
+    {wont.map((w) => <div><h3>{w.title}</h3><p>{w.text}</p></div>)}
+  </div>
+</div></section>
+
+<section class="gray"><div class="wrap">
+  <div class="dc-split">
+    <div>
+      <span class="tag">The real math</span>
+      <h2>Which plan fits your shop?</h2>
+    </div>
+    <div class="dc-body">
+      <p>We count stops. A stop is every time your driver stops the van to make a pickup or a doorstep delivery. If you drop off several orders at the same house in one trip, that's still one stop.</p>
+      <p class="dc-example"><strong>Say you do 10 orders a week.</strong> Each one is a pickup and a delivery, so about 20 stops a week, or about 87 a month. Starter's 150 stops covers that with room to grow.</p>
+      <p>A busier shop or a second driver is what Growth and Fleet are for.</p>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="dc-split">
+    <div>
+      <span class="tag">About cards</span>
+      <h2>Optional, and straightforward.</h2>
+    </div>
+    <div class="dc-body">
+      <p>Customers can always pay the driver or the counter instead, and your plan doesn't change. If you turn on card payments in the app, Stripe charges its own card fee and Clean Racer adds a flat $1.25 per in-app payment. You can charge your customer a small convenience fee, and it's yours to keep. The money goes straight to your own Stripe account. We never hold it.</p>
+      <p><a href="/pricing/#card-payments">See the full breakdown with an example →</a></p>
+    </div>
+  </div>
+</div></section>
+
+<section class="gray"><div class="wrap">
+  <div class="sec-head"><span class="tag">Before you decide</span><h2>Three questions to ask any vendor.</h2><p>Including us.</p></div>
+  <div class="dc-grid3">
+    {ask.map((a, i) => <div><span class="dc-n">{i + 1}</span><h3>{a.title}</h3><p>{a.text}</p></div>)}
+  </div>
+</div></section>
+
+<section class="final"><div class="wrap">
+  <h2>Want to talk it through?</h2>
+  <p>Clean Racer Business is on Google Play now and coming soon to the App Store. Write to us and we'll help you pick the right plan. New to delivery? <a href="/dry-cleaner-pickup-and-delivery/">Here's why cleaners add it.</a></p>
+  <div class="cta"><a class="btn primary" href="mailto:application@cleanracer.com?subject=I%27d%20like%20to%20join%20Clean%20Racer">Get in touch</a><a class="btn plain" href="/pricing/">See pricing →</a></div>
+</div></section>
+
+<SiteFooter />
+</Base>
+
+<style is:global>
+.dc-grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.dc-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.dc-grid4>div,.dc-grid3>div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 22px 12px}
+.dc-grid4 h3,.dc-grid3 h3{font-size:19px;line-height:1.25;margin:2px 0 6px}
+.dc-grid4 p,.dc-grid3 p{color:var(--muted);font-size:16px}
+.dc-n{display:flex;width:34px;height:34px;border-radius:50%;background:var(--tint);color:#fff;font-weight:700;align-items:center;justify-content:center;margin-bottom:12px}
+.dc-split{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:start}
+.dc-split h2{font-size:32px;line-height:1.15;letter-spacing:-.02em;margin-top:6px}
+.dc-body p{font-size:19px;color:var(--muted);margin:0 0 16px}
+.dc-body a{color:var(--tint)}
+.dc-example{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.dc-example strong{color:var(--text)}
+section.final p a{color:var(--tint)}
+@media(max-width:860px){.dc-grid4,.dc-grid3{grid-template-columns:1fr}.dc-split{grid-template-columns:1fr;gap:22px}.dc-split h2{font-size:28px}}
+</style>

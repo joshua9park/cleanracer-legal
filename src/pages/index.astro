@@ -5,7 +5,17 @@ import SiteFooter from "../components/SiteFooter.astro";
 import StoreButtons from "../components/StoreButtons.astro";
 import PlanCards from "../components/PlanCards.astro";
 import "../styles/marketing.css";
-const ld = "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Clean Racer\",\"legalName\":\"MOTHER PARKERSON LLC\",\"url\":\"https://cleanracer.com/\",\"logo\":\"https://cleanracer.com/assets/cleanracer-icon.png\",\"email\":\"support@cleanracer.com\"}";
+const plan = (name, price) => ({ "@type": "Offer", name, priceSpecification: { "@type": "UnitPriceSpecification", price, priceCurrency: "USD", unitText: "MONTH" } });
+const ld = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", name: "Clean Racer", legalName: "MOTHER PARKERSON LLC", url: "https://cleanracer.com/", logo: "https://cleanracer.com/assets/cleanracer-icon.png", email: "support@cleanracer.com" },
+    { "@type": "SoftwareApplication", name: "Clean Racer Business", applicationCategory: "BusinessApplication", operatingSystem: "Android",
+      description: "Pickup and delivery for dry cleaners, on the phones you already have. No POS to replace, no hardware to buy.",
+      url: "https://cleanracer.com/", installUrl: "https://play.google.com/store/apps/details?id=com.cleanracer.business",
+      offers: [plan("Starter", "19.99"), plan("Growth", "39.99"), plan("Fleet", "129.99")] },
+  ],
+});
 ---
 <Base title="Pickup and delivery for dry cleaners \u00b7 Clean Racer Business" description="Add pickup and delivery to the dry cleaner you already run, with just your phone. Your customers book with you, not a directory of cleaners. No POS to replace, no hardware to buy. Starter, Growth and Fleet plans." canonical="https://cleanracer.com/" image="biz" jsonLd={ld}>
 
@@ -15,11 +25,11 @@ const ld = "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"na
     <div>
       <span class="eyebrow">For dry cleaners · Clean Racer Business</span>
       <h1>Your customers. <em>Your delivery.</em></h1>
-      <p class="lede">Add pickup and delivery to the cleaner you already run, with just your phone. Your customers book pickups in the Clean Racer app, you confirm, your driver makes the trip, and customers can pay right in the app. The money goes straight to you. No hardware, no POS, nothing to replace.</p>
+      <p class="lede">Add pickup and delivery to the dry cleaner you already run, with just your phone. Your customers book pickups in the Clean Racer app, you confirm, your driver makes the trip, and customers can pay right in the app. The money goes straight to you. No hardware, no POS, nothing to replace.</p>
       <StoreButtons play="https://play.google.com/store/apps/details?id=com.cleanracer.business" app="Clean Racer Business" />
       <p class="note">Two apps, one account: <b>Clean Racer Business</b> for your team, <b>Clean Racer</b> for your customers.</p>
     </div>
-    <div class="phone-wrap"><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-home.webp" width="620" height="1347" alt="The Clean Racer Business app's Home screen: new pickup requests to confirm, and an overview of the day."></div></div></div>
+    <div class="phone-wrap"><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-home.webp" width="620" height="1347" alt="The Clean Racer Business app's Home screen: new dry cleaning pickup requests to confirm, and an overview of the day."></div></div></div>
   </header>
 </div>
 
@@ -33,7 +43,7 @@ const ld = "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"na
 </div></section>
 
 <section id="features" class="gray"><div class="wrap">
-  <div class="sec-head"><span class="tag">Clean Racer Business</span><h2>Everything your team needs, nothing it doesn't.</h2><p>Built for the owner, the manager and the driver, on one shared list.</p></div>
+  <div class="sec-head"><span class="tag">Clean Racer Business</span><h2>Everything your team needs for pickup and delivery. Nothing it doesn't.</h2><p>Delivery software built for the owner, the manager and the driver, on one shared list.</p></div>
 <div class="apps">
     <div class="app"><img src="/assets/cleanracer-icon.png" alt="Clean Racer app icon" width="72" height="72"><div><h3>Clean Racer</h3><p>For your customers. They link to you and book pickups.</p></div></div>
     <div class="app"><img src="/assets/cleanracer-business-icon.png" alt="Clean Racer Business app icon" width="72" height="72"><div><h3>Clean Racer Business</h3><p>For your team. Run pickups, intake and deliveries.</p></div></div>
@@ -49,7 +59,7 @@ const ld = "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"na
 </div></section>
 
 <section id="screens"><div class="wrap">
-  <div class="sec-head"><span class="tag">In the app</span><h2>From the doorstep to the counter.</h2><p>Every stop on a map, a quick count at intake, a photo at the door to prove it arrived, and cards in the app. Two taps per stop.</p></div>
+  <div class="sec-head"><span class="tag">In the app</span><h2>Pickup and delivery, from the doorstep to the counter.</h2><p>Every stop on a map, a quick count at intake, a photo at the door to prove it arrived, and cards in the app. Two taps per stop.</p></div>
   <div class="rail-nav" aria-hidden="true"><button type="button" id="rail-prev" aria-label="Previous screens">‹</button><button type="button" id="rail-next" aria-label="Next screens">›</button></div>
   <div class="phones3" id="rail" tabindex="0" role="region" aria-label="Clean Racer Business screens, scroll sideways">
     <figure><div class="phone real"><div class="screen"><div class="island"></div><img src="/assets/shots/business-map.webp" width="620" height="1347" alt="The stops map in Clean Racer Business: today's selected pickups pinned across the city, with the list below." loading="lazy"></div></div><figcaption><b>Every stop on a map</b><span>Pickups and deliveries, pinned. Select several and roll.</span></figcaption></figure>
@@ -62,7 +72,7 @@ const ld = "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"na
 </div></section>
 
 <section id="plans" class="gray"><div class="wrap">
-  <div class="sec-head"><span class="tag">Plans</span><h2>Simple pricing for cleaners.</h2><p>Every plan includes every feature and unlimited customers. They differ only in how many drivers you have and how many stops your drivers make each month.</p></div>
+  <div class="sec-head"><span class="tag">Plans</span><h2>Simple pricing for dry cleaners.</h2><p>Every plan includes every feature and unlimited customers. They differ only in how many drivers you have and how many stops your drivers make each month.</p></div>
   <PlanCards />
   <p style="margin-top:26px"><a class="btn plain" href="/pricing/">See full pricing, card fees and questions →</a></p>
 </div></section>
