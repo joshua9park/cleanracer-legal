@@ -20,6 +20,7 @@ const cols = [{ n: "Delivery apps", s: "Rinse, Dryv, Hamperapp" }, { n: "Starchu
 <SiteHeader />
 
 <section class="cp-hero"><div class="wrap">
+  <span class="eyebrow">How we compare</span>
   <h1>Keep your customers.<br><span class="cp-blue">Skip the middleman.</span></h1>
   <p class="lede">Your store's name on every order. Customers book you, not from a list.</p>
 
@@ -85,10 +86,10 @@ const cols = [{ n: "Delivery apps", s: "Rinse, Dryv, Hamperapp" }, { n: "Starchu
 </Base>
 
 <style is:global>
-.cp-hero{padding:56px 0 48px}
-.cp-hero h1{font-size:clamp(42px,7.4vw,84px);line-height:1;letter-spacing:-.04em;font-weight:800;margin:0 0 18px}
+.cp-hero{padding:56px 0 40px}
+.cp-hero h1{font-size:clamp(38px,5.4vw,56px);line-height:1.06;letter-spacing:-.03em;margin:10px 0 18px}
 .cp-blue{color:var(--tint)}
-.cp-hero .lede{font-size:clamp(18px,2.3vw,24px);color:var(--muted);margin:0 0 32px;max-width:30em}
+.cp-hero .lede{margin:0 0 32px}
 .sb{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}
 .sb-head,.sb-row{display:grid;grid-template-columns:1.5fr repeat(4,1fr);align-items:stretch}
 .sb-head span{padding:18px 12px;text-align:center;border-bottom:1px solid var(--line);background:var(--grouped);display:flex;flex-direction:column;justify-content:center}
@@ -129,5 +130,5 @@ const cols = [{ n: "Delivery apps", s: "Rinse, Dryv, Hamperapp" }, { n: "Starchu
 .cp-you em{font-style:normal;font-size:12px;font-weight:700;color:var(--tint)}
 .cp-col .phone{margin:0}
 .cp-foot{color:var(--faint);font-size:13px;max-width:56em;margin:8px auto 0}
-@media(max-width:860px){.sb-head,.sb-row{grid-template-columns:1.2fr repeat(4,.8fr)}.sb-row .q{font-size:14px;padding:14px 10px}.sb-head span{padding:12px 4px}.sb-head b{font-size:12px}.sb-head i{display:none}.sb-row .c{font-size:22px}.c.cost{font-size:13px!important}.sb-row .c i{display:none}.why-grid{grid-template-columns:1fr}.cp-phones{flex-direction:column;align-items:center;gap:36px}.cp-screen{height:480px}}
+@media(max-width:860px){.sb{min-width:0}.sb-head,.sb-row{grid-template-columns:minmax(0,1.5fr) repeat(4,minmax(0,1fr))}.sb-row .q{font-size:13px;padding:12px 8px;line-height:1.25}.sb-head span{padding:10px 2px;min-width:0}.sb-head b{font-size:11px;line-height:1.2;overflow-wrap:anywhere}.sb-head i{display:none}.sb-row .c{font-size:20px;padding:10px 2px}.c.cost{font-size:12px!important;line-height:1.2}.c.cost.us{font-size:13px!important}.sb-row .c i{display:none}.why-grid{grid-template-columns:1fr}.cp-phones{flex-direction:column;align-items:center;gap:36px}.cp-screen{height:480px}}
 </style>
