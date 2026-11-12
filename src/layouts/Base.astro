@@ -2,8 +2,8 @@
 // The frame around every page: the head (title, description, share cards, icons), the shared styles, and the body. The page puts its own header and footer
 // components where it wants them, and its own styles in the "head" slot.
 import "../styles/shell.css";
-interface Props { title: string; description?: string; canonical?: string; image?: "cust" | "biz"; bodyClass?: string; themeColor?: string; noindex?: boolean; refresh?: string; jsonLd?: string }
-const { title, description, canonical, image = "cust", bodyClass, themeColor = "#FFFFFF", noindex = false, refresh, jsonLd } = Astro.props;
+interface Props { title: string; description?: string; canonical?: string; image?: "cust" | "biz"; bodyClass?: string; themeColor?: string; noindex?: boolean; refresh?: string; jsonLd?: string; appId?: string }
+const { title, description, canonical, image = "cust", bodyClass, themeColor = "#FFFFFF", noindex = false, refresh, jsonLd, appId } = Astro.props;
 const og = `https://cleanracer.com/assets/og-${image}.png`;
 ---
 <!doctype html>
@@ -14,6 +14,7 @@ const og = `https://cleanracer.com/assets/og-${image}.png`;
   <title>{title}</title>
   {description && <meta name="description" content={description}>}
   <meta name="theme-color" content={themeColor}>
+  {appId && <meta name="apple-itunes-app" content={`app-id=${appId}`}>}
   {noindex && <meta name="robots" content="noindex">}
   {canonical && <link rel="canonical" href={canonical}>}
   {refresh && <meta http-equiv="refresh" content={refresh}>}
