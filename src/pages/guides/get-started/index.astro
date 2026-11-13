@@ -3,7 +3,7 @@ import Base from "../../../layouts/Base.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import SiteFooter from "../../../components/SiteFooter.astro";
 ---
-<Base title="Get Started with Clean Racer Business \u00b7 Clean Racer" description="Set up your store in Clean Racer Business: hours, pickup windows, service area, items, team, Stripe card payments and your customer QR code." canonical="https://cleanracer.com/guides/get-started/" image="biz">
+<Base title="Get Started with Clean Racer Business \u00b7 Clean Racer" description="Set up your store in Clean Racer Business: hours, pickup windows, service area, services, turnaround and Rush, items, team, Stripe card payments and your customer QR code." canonical="https://cleanracer.com/guides/get-started/" image="biz">
 <Fragment slot="head">
 <style is:global>
 :root{color-scheme:light;
@@ -101,16 +101,47 @@ h1{font-size:30px}}
 </section>
 
 <section class="step">
-<h2><span class="n">6</span>Check your items</h2>
+<h2><span class="n">6</span>Choose your services</h2>
+<span class="where">Account &rarr; Manage Store &rarr; Services</span>
+<ul>
+<li>Turn on what customers can ask for: <strong>Dry cleaning</strong>, <strong>Wash &amp; fold</strong> and <strong>Alterations</strong>. Customers only see the services you turn on, and at least one has to stay on.</li>
+<li>Switches here save the moment you flip them. Orders already booked aren&rsquo;t affected.</li>
+<li><strong>Alterations</strong> (hems, repairs and tailoring): when a customer adds it, they have to describe what needs altering before they can send the request, so you see it with the request. Turning it on gives you a ready-made list of alteration items for intake (check them in the Items step) and a longer turnaround (next step).</li>
+</ul>
+</section>
+
+<section class="step">
+<h2><span class="n">7</span>Set your turnaround and Rush</h2>
+<span class="where">Account &rarr; Manage Store &rarr; Turnaround</span>
+<p>Customers pick the <strong>day</strong> they&rsquo;d like their order back when they request a pickup. Never a time or a window. The day they pick is your promise, and confirming their request confirms it.</p>
+<ul>
+<li><strong>Let customers pick a delivery date:</strong> turn this on to use Deliver by. Turn it off and the choice is hidden.</li>
+<li><strong>Standard turnaround:</strong> how many business days after pickup the order comes back, counted on the days you&rsquo;re open. Customers see the earliest day and the days after it.</li>
+<li><strong>Alterations turnaround:</strong> shown when Alterations is on. An order with alterations uses this longer turnaround, and Rush isn&rsquo;t offered on it.</li>
+<li><strong>Offer Rush delivery</strong> (optional): pick a shorter Rush turnaround and a flat <strong>Rush fee</strong> from $0.00 to $50.00. Rush needs a standard turnaround of at least 2 days. Customers see the Rush days in orange with the fee.</li>
+<li>The <strong>What customers see</strong> preview at the bottom shows the days a customer can choose. Tap <strong>Save</strong> when you&rsquo;re happy. If you leave without saving, the app asks first.</li>
+</ul>
+<div class="sub">
+<strong>How the Rush fee works</strong>
+<ul>
+<li>It&rsquo;s added to the order total automatically once you type the amount at intake, so you only type the items amount.</li>
+<li>Owners and Managers can <strong>Waive Rush fee</strong> on an order, with a reason, and can <strong>Change</strong> the Deliver by date on an order that hasn&rsquo;t gone out for delivery. Moving a Rush order to a standard day takes the fee off.</li>
+<li>It&rsquo;s your fee, and you set it. Clean Racer doesn&rsquo;t charge anything extra for Rush.</li>
+</ul>
+</div>
+</section>
+
+<section class="step">
+<h2><span class="n">8</span>Check your items</h2>
 <span class="where">Account &rarr; Manage Store &rarr; Items</span>
 <ul>
-<li>These are the garments your staff tap when counting an order at intake. New stores start with a ready-made list (tops, bottoms, full body, household and wash &amp; fold).</li>
+<li>These are the garments your staff tap when counting an order at intake. New stores start with a ready-made list (tops, bottoms, full body, household and wash &amp; fold), plus alteration items when Alterations is on.</li>
 <li>You can hide ones you don&rsquo;t use, or add a new garment item.</li>
 </ul>
 </section>
 
 <section class="step">
-<h2><span class="n">7</span>Look over Reasons and Replies</h2>
+<h2><span class="n">9</span>Look over Reasons and Replies</h2>
 <span class="where">Account &rarr; Manage Store &rarr; Reasons and Replies</span>
 <ul>
 <li>Ready-made wording your staff tap instead of typing, such as why a request can&rsquo;t be taken or a quick reply to a message.</li>
@@ -119,7 +150,7 @@ h1{font-size:30px}}
 </section>
 
 <section class="step">
-<h2><span class="n">8</span>Add your team</h2>
+<h2><span class="n">10</span>Add your team</h2>
 <span class="where">Account &rarr; Manage Store &rarr; Team &rarr; Add a Team Member</span>
 <ul>
 <li>Enter their email and choose a role. <strong>Drivers</strong> run pickups, intake and deliveries. <strong>Managers</strong> also see the money screens, settings and team. Only the Owner can add Managers.</li>
@@ -129,7 +160,7 @@ h1{font-size:30px}}
 </section>
 
 <section class="step">
-<h2><span class="n">9</span>Connect Stripe</h2>
+<h2><span class="n">11</span>Connect Stripe</h2>
 <span class="where">Account &rarr; Money &rarr; In-App Payment</span>
 <p>Stripe lets your customers pay by card, Apple Pay or Google Pay right in the Clean Racer app. The money goes straight to <strong>your own Stripe account</strong>. Stores that take cards in the app get paid faster and chase fewer payments. It&rsquo;s optional, and customers can still pay your driver or the counter.</p>
 <ol>
@@ -149,13 +180,13 @@ h1{font-size:30px}}
 </section>
 
 <section class="step">
-<h2><span class="n">10</span>Reward your regulars (optional)</h2>
+<h2><span class="n">12</span>Reward your regulars (optional)</h2>
 <span class="where">Account &rarr; Money &rarr; Rewards Program</span>
 <p>Customers earn points on what they pay you and use them for money off when they pay by card in the app. It is free on every plan, and each reward is simply a discount you give.</p>
 <ol>
 <li>Open <strong>Rewards Program</strong> (Owner only) and turn it on. Turning it on means you agree to the Rewards section of the Store Terms.</li>
 <li>Set the rates: <strong>points earned for every $1 paid</strong> (1 to 10), <strong>points needed for one reward</strong>, and <strong>dollars off per reward</strong> (up to $5). The defaults are 1 point per $1, and 100 points for $5 off. Tap <strong>Save</strong>.</li>
-<li>Make sure card payments are on (step 9). Customers use rewards when they pay by card in the app, so without cards they would earn points they can&rsquo;t use.</li>
+<li>Make sure card payments are on (step 11). Customers use rewards when they pay by card in the app, so without cards they would earn points they can&rsquo;t use.</li>
 </ol>
 <div class="sub">
 <strong>How it works</strong>
@@ -171,7 +202,7 @@ h1{font-size:30px}}
 </section>
 
 <section class="step">
-<h2><span class="n">11</span>Invite your customers</h2>
+<h2><span class="n">13</span>Invite your customers</h2>
 <span class="where">Account &rarr; Manage Store &rarr; Store QR Code</span>
 <ul>
 <li>Show the QR code at your counter, or tap <strong>Share Link</strong> to text or email it. Customers scan it with their phone&rsquo;s camera, install Clean Racer and are linked to your store.</li>
@@ -181,7 +212,7 @@ h1{font-size:30px}}
 </section>
 
 <section class="step">
-<h2><span class="n">12</span>Turn on notifications</h2>
+<h2><span class="n">14</span>Turn on notifications</h2>
 <span class="where">Account &rarr; Preferences</span>
 <ul>
 <li>Allow notifications so new requests and customer messages reach you. Choose your maps app and route settings here too.</li>
@@ -193,6 +224,7 @@ h1{font-size:30px}}
 <ul class="cl">
 <li>Subscribed and live</li>
 <li>Hours, pickup windows and service area set</li>
+<li>Services chosen, and turnaround (with Rush, if you want it) set</li>
 <li>Items reviewed</li>
 <li>Drivers and managers added</li>
 <li>Stripe connected (&ldquo;Card Payments Are On&rdquo;)</li>
